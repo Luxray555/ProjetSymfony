@@ -37,6 +37,11 @@ class Anime
         $this->notes = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->id . ' - ' . $this->nom;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

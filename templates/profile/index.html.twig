@@ -4,18 +4,35 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Profile of {{ user.getUsername() }} :</h1>
-
+    <div class="d-flex m-lg-4 border">
+        <img src="{{ user.getPpUrl() }}" alt="Profile picture" class="img-fluid border">
+        <h1 class="ms-2">{{ user.getUsername() }}</h1>
+    </div>
     <!-- User page with the username, profile picture, banner, and his anime list -->
-    
-    <div class="row">
-        <div class="col-4">
-            <img src="{{ user.getPpUrl() }}" alt="Profile picture" class="img-fluid">
+
+    <div>
+        <div>
+            <h2>Notes</h2>
+                <div class="ms-4">
+                {% for note in user.getNotes() %}
+                    <h3>{{ note.anime.nom }}</h3>
+                    <p>Note : {{ note.note }}</p>
+                {% else %}
+                    <p>No notes yet</p>
+                {% endfor %}
+                </div>
         </div>
-        <div class="col-8">
-            <h2>{{ user.getUsername() }}</h2>
-            <p>{{ user.getbannerUrl() }}</p>
+
+        <div>
+            <h2>Commentaires</h2>
+                <div class="ms-4">
+                {% for com in user.getCommentaires() %}
+                    <h3>{{ com.anime.nom }}</h3>
+                    <p>Note : {{ com.commentaire }}</p>
+                {% else %}
+                    <p>No comments yet</p>
+                {% endfor %}
+                </div>
         </div>
-</div>
+    </div>
 {% endblock %}
