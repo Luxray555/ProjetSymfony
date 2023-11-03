@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.getUsername() }}{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Profile of {{ user.getUsername() }} :</h1>
+
+    <!-- User page with the username, profile picture, banner, and his anime list -->
+    
+    <div class="row">
+        <div class="col-4">
+            <img src="{{ user.getPpUrl() }}" alt="Profile picture" class="img-fluid">
+        </div>
+        <div class="col-8">
+            <h2>{{ user.getUsername() }}</h2>
+            <p>{{ user.getbannerUrl() }}</p>
+        </div>
+</div>
+{% endblock %}
