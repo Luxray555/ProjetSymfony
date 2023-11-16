@@ -1,0 +1,22 @@
+<nav class="nav bg-dark d-flex flex-row align-items-center px-3 flex-nowrap position-relative">
+    <a class="left navbar-brand text-white fw-bold" href="{{ path('app_accueil') }}">AnimeWorld</a>
+    <button class="hamburger navbar-toggler">
+        <i class="ham-icon fa-solid fa-bars text-white"></i>
+    </button>
+    <div class="right d-flex flex-row justify-content-end w-100">
+        <div class="rightsec d-flex flex-row gap-3 justify-content-center w-100">
+            <a class="nav-element {{ app.request.attributes.get('_route') == 'app_accueil' ? 'active' : '' }}" href="{{ path('app_accueil') }}">Accueil</a>
+            <a class="nav-element {{ app.request.attributes.get('_route') == 'app_recherche' ? 'active' : '' }}" href="">Recherche</a>
+            <a class="nav-element {{ app.request.attributes.get('_route') == 'app_commentaires' ? 'active' : '' }}" href="">Commentaires</a>
+        </div>
+        <div class="rightsec d-flex flex-row gap-2">
+            {% if app.user %}
+                <a class="nav-element {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}" href="{{ path('app_profile',{'id': app.user.id}) }}">Profil</a>
+                <a class="nav-element logout" href="{{ path('app_logout') }}">Deconnexion</a>
+            {% else %}
+                <a class="nav-element {{ app.request.attributes.get('_route') == 'app_register' ? 'active' : '' }}" href="{{ path('app_register') }}">Inscription</a>
+                <a class="nav-element {{ app.request.attributes.get('_route') == 'app_login' ? 'active' : '' }}" href="{{ path('app_login') }}">Connexion</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

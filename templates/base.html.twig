@@ -3,8 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.052a1081.css') }}">
         <link rel="stylesheet" href="{{ asset('styles/global.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/header.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/body.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/footer.css') }}">
         {% block stylesheets %}
         {% endblock %}
 
@@ -12,6 +17,11 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include 'component/header.html.twig' %}
+        <div class="body">
+            {% block body %}{% endblock %}
+        </div>
+        {% include 'component/footer.html.twig' %}
     </body>
+    <script src="{{ asset('scripts/header.js') }}"></script>
 </html>
