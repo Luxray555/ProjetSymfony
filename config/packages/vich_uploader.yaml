@@ -1,8 +1,23 @@
 vich_uploader:
     db_driver: orm
 
-    #mappings:
-    #    products:
-    #        uri_prefix: /images/products
-    #        upload_destination: '%kernel.project_dir%/public/images/products'
-    #        namer: Vich\UpljoaderBundle\Naming\SmartUniqueNamer
+    mappings:
+        cover_anime:
+            uri_prefix: /images/anime/cover
+            upload_destination: '%kernel.project_dir%/public/images/anime/cover'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        banner_anime:
+            uri_prefix: /images/anime/banner
+            upload_destination: '%kernel.project_dir%/public/images/anime/banner'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        pp_user:
+            uri_prefix: /images/user/pp
+            upload_destination: '%kernel.project_dir%/public/images/user/pp'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        banner_user:
+            uri_prefix: /images/user/banner
+            upload_destination: '%kernel.project_dir%/public/images/user/banner'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

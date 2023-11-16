@@ -8,8 +8,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -26,9 +29,19 @@ class UserCrudController extends AbstractCrudController
             EmailField::new('email'),
             TextField::new('username'),
             TextField::new('password')->hideOnIndex(),
-            TextField::new('ppUrl'),
-            TextField::new('bannerUrl'),
-            TextEditorField::new('bio'),
+            ImageField::new('ppImageName')
+                ->onlyOnIndex()
+                ->setBasePath('/images/user/pp'),
+            TextareaField::new('ppImageFile')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
+            ImageField::new('bannerImageName')
+                ->onlyOnIndex()
+                ->setBasePath('/images/user/banner'),
+            TextareaField::new('bannerImageFile')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
+            Field::new('bio'),
             ArrayField::new('roles'),
             Field::new('isVerified'),
         ];
