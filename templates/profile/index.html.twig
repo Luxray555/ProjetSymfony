@@ -5,11 +5,12 @@
 {% block body %}
 
     <div class="d-flex m-lg-4 border">
-        <img src="{{ user.getPpUrl() }}" alt="Profile picture" class="img-fluid border">
+        <img src="{{ vich_uploader_asset(user, 'ppImageFile') }}" alt="Profile picture" class="img-fluid">
         <h1 class="ms-2">{{ user.getUsername() }}</h1>
     </div>
-    <!-- User page with the username, profile picture, banner, and his anime list -->
-
+    <div>
+        <p>{{ user.bio }}</p>
+    </div>
     <div>
         <div>
             <h2>Notes</h2>

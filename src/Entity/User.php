@@ -7,12 +7,15 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[Vich\Uploadable]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -35,11 +38,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $ppUrl = null;
+    #[Vich\UploadableField(mapping: 'pp_user', fileNameProperty: 'ppImageName', size: 'ppImageSize')]
+    private ?File $ppImageFile = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $bannerUrl = null;
+    #[ORM\Column(nullable: true)]
+    private ?string $ppImageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $ppImageSize = null;
+
+    #[Vich\UploadableField(mapping: 'banner_user', fileNameProperty: 'bannerImageName', size: 'bannerImageSize')]
+    private ?File $bannerImageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $bannerImageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $bannerImageSize = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $bio = null;
@@ -134,28 +152,76 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getPpUrl(): ?string
+    public function getPpImageName(): ?string
     {
-        return $this->ppUrl;
+        return $this->ppImageName;
     }
 
-    public function setPpUrl(?string $ppUrl): static
+    public function setPpImageName(?string $ppImageName): void
     {
-        $this->ppUrl = $ppUrl;
-
-        return $this;
+        $this->ppImageName = $ppImageName;
     }
 
-    public function getBannerUrl(): ?string
+    public function getPpImageSize(): ?int
     {
-        return $this->bannerUrl;
+        return $this->ppImageSize;
     }
 
-    public function setBannerUrl(?string $bannerUrl): static
+    public function setPpImageSize(?int $ppImageSize): void
     {
-        $this->bannerUrl = $bannerUrl;
+        $this->ppImageSize = $ppImageSize;
+    }
 
-        return $this;
+    public function getBannerImageName(): ?string
+    {
+        return $this->bannerImageName;
+    }
+
+    public function setBannerImageName(?string $bannerImageName): void
+    {
+        $this->bannerImageName = $bannerImageName;
+    }
+
+    public function getBannerImageSize(): ?int
+    {
+        return $this->bannerImageSize;
+    }
+
+    public function setBannerImageSize(?int $bannerImageSize): void
+    {
+        $this->bannerImageSize = $bannerImageSize;
+    }
+
+    public function getPpImageFile(): ?File
+    {
+        return $this->ppImageFile;
+    }
+
+    public function setPpImageFile(?File $ppImageFile = null): void
+    {
+        $this->ppImageFile = $ppImageFile;
+
+        if (null !== $ppImageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getBannerImageFile(): ?File
+    {
+        return $this->bannerImageFile;
+    }
+
+    public function setBannerImageFile(?File $bannerImageFile = null): void
+    {
+        $this->bannerImageFile = $bannerImageFile;
+
+        if (null !== $bannerImageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 
     public function getBio(): ?string

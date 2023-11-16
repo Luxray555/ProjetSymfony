@@ -7,8 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AnimeRepository::class)]
+#[Vich\Uploadable]
 class Anime
 {
     #[ORM\Id]
@@ -22,14 +25,32 @@ class Anime
     #[ORM\Column(type: Types::TEXT)]
     private ?string $synopsis = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $imgUrl = null;
-
     #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Commentaire::class)]
     private Collection $commentaires;
 
     #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Note::class)]
     private Collection $notes;
+
+    #[Vich\UploadableField(mapping: 'cover_anime', fileNameProperty: 'coverImageName', size: 'coverImageSize')]
+    private ?File $coverImageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $coverImageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $coverImageSize = null;
+
+    #[Vich\UploadableField(mapping: 'banner_anime', fileNameProperty: 'bannerImageName', size: 'bannerImageSize')]
+    private ?File $bannerImageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $bannerImageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $bannerImageSize = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     public function __construct()
     {
@@ -141,5 +162,77 @@ class Anime
         }
 
         return $this;
+    }
+
+    public function setCoverImageFile(?File $coverImageFile = null): void
+    {
+        $this->coverImageFile = $coverImageFile;
+
+        if (null !== $coverImageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getCoverImageFile(): ?File
+    {
+        return $this->coverImageFile;
+    }
+
+    public function setCoverImageName(?string $coverImageName): void
+    {
+        $this->coverImageName = $coverImageName;
+    }
+
+    public function getCoverImageName(): ?string
+    {
+        return $this->coverImageName;
+    }
+
+    public function setCoverImageSize(?int $coverImageSize): void
+    {
+        $this->coverImageSize = $coverImageSize;
+    }
+
+    public function getCoverImageSize(): ?int
+    {
+        return $this->coverImageSize;
+    }
+
+    public function setBannerImageFile(?File $bannerImageFile = null): void
+    {
+        $this->bannerImageFile = $bannerImageFile;
+
+        if (null !== $bannerImageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getBannerImageFile(): ?File
+    {
+        return $this->bannerImageFile;
+    }
+
+    public function getBannerImageName(): ?string
+    {
+        return $this->bannerImageName;
+    }
+
+    public function setBannerImageName(?string $bannerImageName): void
+    {
+        $this->bannerImageName = $bannerImageName;
+    }
+
+    public function getBannerImageSize(): ?int
+    {
+        return $this->bannerImageSize;
+    }
+
+    public function setBannerImageSize(?int $bannerImageSize): void
+    {
+        $this->bannerImageSize = $bannerImageSize;
     }
 }
