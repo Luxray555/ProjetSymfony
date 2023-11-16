@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout de la navbar + css + js et du footer">
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification page profile margin top user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/component/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +18,13 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="detached" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -206,7 +212,9 @@
       <workItem from="1699977729912" duration="937000" />
       <workItem from="1700142424967" duration="14370000" />
       <workItem from="1700157064191" duration="693000" />
-      <workItem from="1700157841418" duration="129000" />
+      <workItem from="1700157841418" duration="3794000" />
+      <workItem from="1700163196022" duration="16000" />
+      <workItem from="1700164435439" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -256,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700157723628</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Rectification page profile margin top user">
+      <option name="closed" value="true" />
+      <created>1700158041264</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700158041264</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +284,7 @@
     <MESSAGE value="Ajout et modification des crud Note et Commentaire Administrateur pour que la note soit comprise entre 0 et 5 et avec des sauts de 0.5" />
     <MESSAGE value="Ajout du bundle vich/uploader-bundle" />
     <MESSAGE value="Ajout de la navbar + css + js et du footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la navbar + css + js et du footer" />
+    <MESSAGE value="Rectification page profile margin top user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rectification page profile margin top user" />
   </component>
 </project>
