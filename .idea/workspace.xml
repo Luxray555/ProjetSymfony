@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout du bundle vich/uploader-bundle">
-      <change afterPath="$PROJECT_DIR$/public/scripts/header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/body.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout de la navbar + css + js et du footer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +205,8 @@
       <workItem from="1699977235018" duration="480000" />
       <workItem from="1699977729912" duration="937000" />
       <workItem from="1700142424967" duration="14370000" />
-      <workItem from="1700157064191" duration="580000" />
+      <workItem from="1700157064191" duration="693000" />
+      <workItem from="1700157841418" duration="129000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -254,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699978280243</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ajout de la navbar + css + js et du footer">
+      <option name="closed" value="true" />
+      <created>1700157723628</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700157723628</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +267,7 @@
     <MESSAGE value="Modificationd de la date et heure par defaut dès la creation d'une note et d'un commentaire par la date et l'heure actuel + migration" />
     <MESSAGE value="Ajout et modification des crud Note et Commentaire Administrateur pour que la note soit comprise entre 0 et 5 et avec des sauts de 0.5" />
     <MESSAGE value="Ajout du bundle vich/uploader-bundle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du bundle vich/uploader-bundle" />
+    <MESSAGE value="Ajout de la navbar + css + js et du footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la navbar + css + js et du footer" />
   </component>
 </project>
