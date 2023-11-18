@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout page anime + css (sans l'option d'ajout de commentaire)">
-      <change afterPath="$PROJECT_DIR$/public/styles/anime.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2023_21_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2023_21_00__Changes_.xml" afterDir="false" />
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Note.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Note.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CommentaireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentaireType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/NoteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NoteType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/anime/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +228,7 @@
       <workItem from="1700167241771" duration="632000" />
       <workItem from="1700312042854" duration="12876000" />
       <workItem from="1700330515337" duration="497000" />
-      <workItem from="1700332087491" duration="170000" />
+      <workItem from="1700332087491" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -309,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700322632623</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="...">
+      <option name="closed" value="true" />
+      <created>1700332288104</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700332288104</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +336,7 @@
     <MESSAGE value="Rectification page profile margin top user" />
     <MESSAGE value="Rectification" />
     <MESSAGE value="Ajout page anime + css (sans l'option d'ajout de commentaire)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout page anime + css (sans l'option d'ajout de commentaire)" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>

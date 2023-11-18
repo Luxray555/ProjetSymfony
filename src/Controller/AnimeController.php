@@ -2,20 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\Anime;
+use App\Entity\Commentaire;
+use App\Entity\Note;
+use App\Form\CommentaireType;
+use App\Form\NoteType;
+use App\Repository\AnimeRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/anime')]
 class AnimeController extends AbstractController
 {
-<<<<<<< HEAD
-    #[Route('/anime', name: 'app_anime')]
-    public function index(): Response
-    {
-        return $this->render('anime/index.html.twig', [
-            'controller_name' => 'AnimeController',
-=======
-    #[Route('/{id}', name: 'app_anime_index', methods: ['GET', 'POST'])]
+    #[Route('/{id}', name: 'app_anime_show', methods: ['GET', 'POST'])]
     public function index(Request $request, Anime $anime, AnimeRepository $animeRepository, EntityManagerInterface $entityManager): Response
     {
         $commentaire = new Commentaire();
@@ -29,7 +31,7 @@ class AnimeController extends AbstractController
             $entityManager->persist($commentaire);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_anime_index', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_anime_show', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
         }
 
         $note = new Note();
@@ -43,14 +45,13 @@ class AnimeController extends AbstractController
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_anime_index', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_anime_show', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('anime/show.html.twig', [
             'anime' => $anime,
             'form1' => $form1,
             'form2' => $form2,
->>>>>>> 5d7212e (Ajout option d'ajout de commentaire et de note)
         ]);
     }
 }
