@@ -86,6 +86,18 @@
     font-size: calc(0.6rem + 0.5vw);
     margin-bottom: 0px;
 }
+.interact .commentaires{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.interact .notes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
 
 @media screen and (max-width: 678px) {
     .cardAnime {

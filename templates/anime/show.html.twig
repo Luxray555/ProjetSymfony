@@ -21,7 +21,10 @@
             <div class="interact">
                 <div class="commentaires">
                     <h2>Commentaires</h2>
-                    {% for commentaire in anime.commentaires %}
+                    {{ form_start(form1) }}
+                    {{ form_widget(form1) }}
+                    {{ form_end(form1) }}
+                    {% for commentaire in anime.commentaires | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
                         <div class="bloc commentaire">
                             <div class="top">
                                 <h3>{{ commentaire.user.username }}</h3>
@@ -39,7 +42,10 @@
                 <br>
                 <div class="notes">
                     <h2>Notes</h2>
-                    {% for note in anime.notes %}
+                    {{ form_start(form2) }}
+                    {{ form_widget(form2) }}
+                    {{ form_end(form2) }}
+                    {% for note in anime.notes | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
                         <div class="bloc note">
                             <div class="top">
                                 <h3>{{ note.user.username }}</h3>

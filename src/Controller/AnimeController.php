@@ -19,34 +19,41 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/anime')]
 class AnimeController extends AbstractController
 {
-    #[Route('/{id}', name: 'app_anime_index', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_anime_index', methods: ['GET', 'POST'])]
     public function index(Request $request, Anime $anime, AnimeRepository $animeRepository, EntityManagerInterface $entityManager): Response
     {
         $commentaire = new Commentaire();
-        $form = $this->createForm(CommentaireType::class, $commentaire);
-        $form->handleRequest($request);
+        $commentaire->setAnime($anime);
+        $commentaire->setUser($this->getUser());
+        $form1 = $this->createForm(CommentaireType::class, $commentaire);
+        $form1->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form1->isSubmitted() && $form1->isValid()) {
+            $commentaire->setDateCreation(new \DateTime());
             $entityManager->persist($commentaire);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_anime_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_anime_index', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
         }
 
         $note = new Note();
-        $form = $this->createForm(NoteType::class, $note);
-        $form->handleRequest($request);
+        $note->setAnime($anime);
+        $note->setUser($this->getUser());
+        $form2 = $this->createForm(NoteType::class, $note);
+        $form2->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form2->isSubmitted() && $form2->isValid()) {
+            $note->setDateCreation(new \DateTime());
             $entityManager->persist($note);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_anime_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_anime_index', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('anime/show.html.twig', [
             'anime' => $anime,
-            'form' => $form,
+            'form1' => $form1,
+            'form2' => $form2,
         ]);
     }
 }

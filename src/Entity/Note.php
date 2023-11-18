@@ -22,7 +22,7 @@ class Note
     #[ORM\Column]
     private ?float $note = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, options: ["default" => "CURRENT_TIMESTAMP"])]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable:true, options: ["default" => "CURRENT_TIMESTAMP"])]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\ManyToOne(inversedBy: 'notes')]
