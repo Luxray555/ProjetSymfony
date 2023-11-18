@@ -92,18 +92,6 @@ class Anime
         return $this;
     }
 
-    public function getImgUrl(): ?string
-    {
-        return $this->imgUrl;
-    }
-
-    public function setImgUrl(?string $imgUrl): static
-    {
-        $this->imgUrl = $imgUrl;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Commentaire>
      */

@@ -14,7 +14,11 @@ class AnimeType extends AbstractType
         $builder
             ->add('nom')
             ->add('synopsis')
-            ->add('imgUrl')
+            ->add('coverImageName')
+            ->add('coverImageSize')
+            ->add('bannerImageName')
+            ->add('bannerImageSize')
+            ->add('updatedAt')
         ;
     }
 

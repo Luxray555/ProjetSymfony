@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification page profile margin top user">
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification">
+      <change afterPath="$PROJECT_DIR$/public/styles/anime.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/body.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/body.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Anime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Anime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AnimeType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/component/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +222,10 @@
       <workItem from="1700157064191" duration="693000" />
       <workItem from="1700157841418" duration="3794000" />
       <workItem from="1700163196022" duration="16000" />
-      <workItem from="1700164435439" duration="664000" />
+      <workItem from="1700164435439" duration="1050000" />
+      <workItem from="1700165545572" duration="154000" />
+      <workItem from="1700167241771" duration="632000" />
+      <workItem from="1700312042854" duration="10223000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -272,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700158041264</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Rectification">
+      <option name="closed" value="true" />
+      <created>1700165315001</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700165315001</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +304,7 @@
     <MESSAGE value="Ajout du bundle vich/uploader-bundle" />
     <MESSAGE value="Ajout de la navbar + css + js et du footer" />
     <MESSAGE value="Rectification page profile margin top user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rectification page profile margin top user" />
+    <MESSAGE value="Rectification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rectification" />
   </component>
 </project>
