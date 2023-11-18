@@ -17,6 +17,13 @@ class NoteType extends AbstractType
                 'label' => 'Note',
                 'attr' => [
                     'placeholder' => 'Votre note',
+                    'class' => 'note-number'
+                ],
+                'label_attr' => [
+                    'class' => 'note-label',
+                ],
+                'row_attr' => [
+                    'class' => 'form note-number-form',
                 ],
             ])
         ;

@@ -3,6 +3,9 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset("/styles/anime.css") }}">
 {% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('scripts/anime.js') }}"></script>
+{% endblock %}
 
 {% block title %}{{ anime.nom }}{% endblock %}
 
@@ -21,30 +24,41 @@
             <div class="interact">
                 <div class="commentaires">
                     <h2>Commentaires</h2>
-                    {{ form_start(form1) }}
-                    {{ form_widget(form1) }}
+                    {% if app.user %}
+                        {{ form_start(form1) }}
+                        {{ form_widget(form1) }}
+                        <div class="bottom">
+                            <button type="submit">Publier</button>
+                            <span class="counter"><span class="character-count">0</span>/500</span>
+                        </div>
                     {{ form_end(form1) }}
-                    {% for commentaire in anime.commentaires | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
-                        <div class="bloc commentaire">
-                            <div class="top">
-                                <h3>{{ commentaire.user.username }}</h3>
-                                <span class="datetime">
+                    {% endif %}
+                    <div class="commentaires-users">
+                        {% for commentaire in anime.commentaires | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
+                            <div class="bloc commentaire">
+                                <div class="top">
+                                    <h3>{{ commentaire.user.username }}</h3>
+                                    <span class="datetime">
                                     <span class="date">{{ commentaire.dateCreation | date('d-m-Y') }}</span>
                                     <span class="time">{{ commentaire.dateCreation | date('H:i:s') }}</span>
                                 </span>
+                                </div>
+                                <p>{{ commentaire.commentaire }}</p>
                             </div>
-                            <p>{{ commentaire.commentaire }}</p>
-                        </div>
-                    {% else %}
-                        <p>Aucun Commentaire</p>
-                    {% endfor %}
+                        {% else %}
+                            <p>Aucun Commentaire</p>
+                        {% endfor %}
+                    </div>
                 </div>
                 <br>
                 <div class="notes">
                     <h2>Notes</h2>
-                    {{ form_start(form2) }}
-                    {{ form_widget(form2) }}
-                    {{ form_end(form2) }}
+                    {% if app.user %}
+                        {{ form_start(form2) }}
+                        {{ form_widget(form2) }}
+                        {{ form_end(form2) }}
+                    {% endif %}
+                    <div class="notes-users">
                     {% for note in anime.notes | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
                         <div class="bloc note">
                             <div class="top">
@@ -59,6 +73,7 @@
                     {% else %}
                         <p>Aucune Note</p>
                     {% endfor %}
+                    </div>
                 </div>
         </div>
     </div>
