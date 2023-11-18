@@ -29,7 +29,8 @@ class NoteCrudController extends AbstractCrudController
                 'attr' => ['min' => 0, 'max' => 5, 'step' => 0.5],
                 'html5' => true,
             ]),
-            DateTimeField::new('date_creation'),
+            DateTimeField::new('date_creation')
+            ->hideWhenCreating(),
         ];
     }
 }

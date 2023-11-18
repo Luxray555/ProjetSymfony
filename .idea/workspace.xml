@@ -5,14 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout page anime + css (sans l'option d'ajout de commentaire)">
+      <change afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/bleach-banner-6558d31fa874e872653428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/chainsaw-banner-6558d352c5e19484160698.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/dbz-banner-6558d3802b8d1562732413.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/demon-slayer-banner-6558d41e47617996559278.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/naruto-banner-6558d2a4f087b049106253.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/one-piece-banner-6558d2f277d0e745831207.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/re-zero-banner-6558d3db15305240964714.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/banner/snk-banner-6558d45360515930262963.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/bleach-6558d31fa82ac593361329.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/chainsaw-6558d352c59b6377344538.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/dbz-6558d3802b4b5776533570.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/demon-slayer-6558d41e47208362601852.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/naruto-6558d2a4efdbc934598786.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/one-piece-6558d2f2777e5696628257.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/re-zero-6558d3db14efb691453640.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/anime/cover/snk-6558d453600ec424081609.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/temp/anime.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/accueil.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/anime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/anime.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/anime/banner/145064-s7qagxf6kmrw-6558db8775e36604340285.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/anime/cover/bx145064-5fa4zbbw4dqa-6558db87755ee020662385.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/anime.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/body.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/body.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AnimeCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AnimeCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CommentaireCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CommentaireCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/NoteCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/NoteCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Anime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Anime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Commentaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Commentaire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Note.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Note.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AnimeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AnimeType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/CommentaireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentaireType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/NoteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NoteType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CommentaireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CommentaireRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/NoteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NoteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/commentaire_crud/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/commentaire_crud/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/component/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +69,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -181,20 +219,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
@@ -224,6 +262,7 @@
       <workItem from="1700165545572" duration="154000" />
       <workItem from="1700167241771" duration="632000" />
       <workItem from="1700312042854" duration="12876000" />
+      <workItem from="1700330515337" duration="497000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />

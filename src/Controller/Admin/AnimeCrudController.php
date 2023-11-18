@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Anime;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -39,12 +40,8 @@ class AnimeCrudController extends AbstractCrudController
             TextareaField::new('bannerImageFile')
                 ->setFormType(VichImageType::class)
                 ->hideOnIndex(),
-
-
-
-
-
-
+            DateTimeField::new('dateAjout')
+                ->hideWhenCreating(),
         ];
     }
 

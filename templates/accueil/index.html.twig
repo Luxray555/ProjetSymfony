@@ -1,6 +1,80 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/accueil.css') }}">
+{% endblock %}
 
 {% block body %}
+
+    <div class="row m-4">
+        <div class="col-md-7">
+            <div class="container">
+                <h2>Anime en tendance</h2>
+                <div class="row">
+                    {% for anime in trendingAnime %}
+                        <div class="card col m-3 p-0" style="border: hidden; z-index: -10; max-width: 8.5rem; min-width: 8.5rem;">
+                            <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}" class="card-img-top" style="height: 10rem;">
+                            <h5 class="card-title">{{ anime.nom }}</h5>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Nouveautés</h2>
+                <div class="row">
+                    {% for anime in newAnime %}
+                        <div class="card col-md m-3 p-0" style="border: hidden; z-index: -10; max-width: 8.5rem; min-width: 8.5rem;">
+                            <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt={{ anime.nom }}anime" class="card-img-top" style="height: 10rem;">
+                            <h5 class="card-title">{{ anime.nom }}</h5>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-5">
+            <div class="container">
+                <h2 class="h2">Activité de {{ app.user.username }}</h2>
+                <div class="row-cols-auto w-100 m-auto">
+
+                    {% for action in lastActions %}
+                        <div class="col p-2" style="height: 7rem">
+                            <div class="card h-100">
+                                <div class="container h-100 w-100">
+                                    <div class="row h-100 w-100">
+                                        <div class="col-3 h-100 p-0" style="width: 5rem;">
+                                            <img src="{{ vich_uploader_asset(action.anime, 'coverImageFile') }}" alt="{{ action.anime.nom }}" class="card-img h-100">
+                                        </div>
+                                        <div class="card-body col w-50 h-100" style="padding-right: 0">
+                                            {% if action.note is defined %}
+                                                <h5>Note :</h5>
+                                                <div class="d-flex flex-row justify-content-between h-100 w-100">
+                                                    <p>{{ action.note }}/5</p>
+                                                    <p class="align-self-end">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
+                                                </div>
+                                            {% else %}
+                                                <h5>Commentaire :</h5>
+                                                <div class="d-flex flex-row justify-content-between h-100 w-100">
+                                                    {% if action.commentaire|length > 40 %}
+                                                        <p>{{ action.commentaire[:40] ~ '...'}}</p>
+                                                    {% else %}
+                                                        <p>{{ action.commentaire}}</p>
+                                                    {% endif %}
+                                                    <p class="align-self-end">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -21,20 +21,32 @@ class AnimeRepository extends ServiceEntityRepository
         parent::__construct($registry, Anime::class);
     }
 
-//    /**
-//     * @return Anime[] Returns an array of Anime objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * @return Anime[] Returns an array of Anime objects
+     */
+    public function findNewlyAdded(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.dateAjout', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    /**
+     * @return Anime[] Returns an array of Anime objects
+     */
+    public function findTrendingAnime(): array
+    {
+        // Temporaire
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'ASC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 //    public function findOneBySomeField($value): ?Anime
 //    {

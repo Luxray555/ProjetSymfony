@@ -22,7 +22,7 @@ class Note
     #[ORM\Column]
     private ?float $note = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable:true, options: ["default" => "CURRENT_TIMESTAMP"])]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, options: ["default" => "CURRENT_TIMESTAMP"])]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\ManyToOne(inversedBy: 'notes')]
@@ -32,6 +32,11 @@ class Note
     #[ORM\ManyToOne(inversedBy: 'notes')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
+
+    public function __construct()
+    {
+        $this->dateCreation = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
