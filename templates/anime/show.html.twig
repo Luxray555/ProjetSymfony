@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("/styles/anime.css") }}">
+{% endblock %}
+
+{% block title %}{{ anime.nom }}{% endblock %}
+
+{% block body %}
+    <div class="banner" style="background: url('{{ vich_uploader_asset(anime, "bannerImageFile")}}');"></div>
+        <div class="sec">
+            <div class="cardAnime">
+                <div class="cover">
+                    <img src="{{ vich_uploader_asset(anime, "coverImageFile") }}" alt="Cover Image">
+                </div>
+                <div class="info">
+                    <h1>{{ anime.nom }}</h1>
+                    <p>{{ anime.synopsis }}</p>
+                </div>
+            </div>
+            <div class="interact">
+                <div class="commentaires">
+                    <h2>Commentaires</h2>
+                    {{ form_start(form1) }}
+                    {{ form_widget(form1) }}
+                    {{ form_end(form1) }}
+                    {% for commentaire in anime.commentaires | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
+                        <div class="bloc commentaire">
+                            <div class="top">
+                                <h3>{{ commentaire.user.username }}</h3>
+                                <span class="datetime">
+                                    <span class="date">{{ commentaire.dateCreation | date('d-m-Y') }}</span>
+                                    <span class="time">{{ commentaire.dateCreation | date('H:i:s') }}</span>
+                                </span>
+                            </div>
+                            <p>{{ commentaire.commentaire }}</p>
+                        </div>
+                    {% else %}
+                        <p>Aucun Commentaire</p>
+                    {% endfor %}
+                </div>
+                <br>
+                <div class="notes">
+                    <h2>Notes</h2>
+                    {{ form_start(form2) }}
+                    {{ form_widget(form2) }}
+                    {{ form_end(form2) }}
+                    {% for note in anime.notes | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
+                        <div class="bloc note">
+                            <div class="top">
+                                <h3>{{ note.user.username }}</h3>
+                                <span class="datetime">
+                                    <span class="date">{{ note.dateCreation | date('d-m-Y') }}</span>
+                                    <span class="time">{{ note.dateCreation | date('H:i:s') }}</span>
+                                </span>
+                            </div>
+                            <p>{{ note.note }} / 5</p>
+                        </div>
+                    {% else %}
+                        <p>Aucune Note</p>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+{% endblock %}
