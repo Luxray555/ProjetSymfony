@@ -52,10 +52,14 @@ class Anime
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $dateAjout = null;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
         $this->notes = new ArrayCollection();
+        $this->dateAjout = new \DateTimeImmutable();
     }
 
     public function __toString(): string
@@ -88,6 +92,18 @@ class Anime
     public function setSynopsis(string $synopsis): static
     {
         $this->synopsis = $synopsis;
+
+        return $this;
+    }
+
+    public function getImgUrl(): ?string
+    {
+        return $this->imgUrl;
+    }
+
+    public function setImgUrl(?string $imgUrl): static
+    {
+        $this->imgUrl = $imgUrl;
 
         return $this;
     }
@@ -222,5 +238,17 @@ class Anime
     public function setBannerImageSize(?int $bannerImageSize): void
     {
         $this->bannerImageSize = $bannerImageSize;
+    }
+
+    public function getDateAjout(): ?\DateTimeImmutable
+    {
+        return $this->dateAjout;
+    }
+
+    public function setDateAjout(?\DateTimeImmutable $dateAjout): static
+    {
+        $this->dateAjout = $dateAjout;
+
+        return $this;
     }
 }

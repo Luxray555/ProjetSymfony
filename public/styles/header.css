@@ -1,5 +1,6 @@
 .nav{
     height: 60px;
+    z-index: 100;
 }
 
 .nav .hamburger{
@@ -43,7 +44,6 @@
 
 @media screen and (max-width: 780px) {
     .nav .right {
-        z-index: 2;
         height: 0 !important;
         display: flex !important;
         background-color: #212529;

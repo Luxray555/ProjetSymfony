@@ -25,6 +25,7 @@ class CommentaireCrudController extends AbstractCrudController
             AssociationField::new('user'),
             TextField::new('commentaire'),
             DateTimeField::new('date_creation')
+            ->hideWhenCreating(),
         ];
     }
 }

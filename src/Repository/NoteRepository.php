@@ -21,20 +21,20 @@ class NoteRepository extends ServiceEntityRepository
         parent::__construct($registry, Note::class);
     }
 
-//    /**
-//     * @return Note[] Returns an array of Note objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('n')
-//            ->andWhere('n.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('n.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * @return Note[] Returns an array of Note objects
+     */
+    public function findLastNotesForUser($user): array
+    {
+        return $this->createQueryBuilder('n')
+            ->andWhere('n.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('n.dateCreation', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    public function findOneBySomeField($value): ?Note
 //    {

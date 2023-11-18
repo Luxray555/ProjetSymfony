@@ -28,6 +28,11 @@ class Commentaire
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    public function __construct()
+    {
+        $this->dateCreation = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
