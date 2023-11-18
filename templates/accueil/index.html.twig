@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-
+        {% if app.user %}
         <div class="col-xl-5">
             <div class="container">
                 <h2 class="h2">Activité de {{ app.user.username }}</h2>
@@ -75,6 +75,7 @@
 
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
