@@ -2,8 +2,8 @@
 
 {% block title %}{{ user.getUsername() }}{% endblock %}
 
-{% block javascripts %}
-    <script src="{{ asset('scripts/stars.js') }}"></script>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("/styles/profile.css") }}">
 {% endblock %}
 
 {% block body %}
