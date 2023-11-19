@@ -2,6 +2,14 @@
 
 {% block title %}{{ user.getUsername() }}{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('scripts/stars.js') }}"></script>
+{% endblock %}
+
 {% block body %}
 
     <div class="d-flex m-lg-4 border">
@@ -14,24 +22,50 @@
     <div>
         <div>
             <h2>Notes</h2>
-                <div class="ms-4">
+                <div class="ms-4 notes_container">
                 {% for note in user.getNotes() %}
-                    <h3>{{ note.anime.nom }}</h3>
-                    <p>Note : {{ note.note }}</p>
+                    <div class="note_display">
+                        <a href="{{ path('app_anime_show', {'id': note.anime.id}) }}">
+                            <img class="cover" src="{{ vich_uploader_asset(note.anime, "coverImageFile") }}" alt="Note Image">
+                        </a>
+                        <h3>{{ note.anime.nom }}</h3>
+                        <div class="rating">
+                            {% set fullStars = note.note | round(0, 'floor') %} {# Get the integer part for full stars #}
+                            {% set hasHalfStar = note.note - fullStars >= 0.5 %}
+                            {% for i in range(1, 5) %}
+                                {% if i <= fullStars %}
+                                    <span class="star">&#9733;</span>
+                                {% elseif hasHalfStar %}
+                                    {% set hasHalfStar = false %}
+                                    <span class="star half">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                {% else %}
+                                    <span class="star">&#9734;</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
                 {% else %}
-                    <p>No notes yet</p>
+                    <p>Vous n'avez pas encore mis de notes 😢</p>
                 {% endfor %}
                 </div>
         </div>
 
         <div>
             <h2>Commentaires</h2>
-                <div class="ms-4">
+                <div class="ms-4 comm_container">
                 {% for com in user.getCommentaires() %}
-                    <h3>{{ com.anime.nom }}</h3>
-                    <p>Note : {{ com.commentaire }}</p>
+                    <div class="comm_display">
+                        <a href="{{ path('app_anime_show', {'id': com.anime.id}) }}">
+                            <img src="{{ vich_uploader_asset(com.anime, "coverImageFile") }}" alt="Comm Image">
+                        </a>
+                        <div class="comm_content">
+                            <h3>{{ com.anime.nom }}</h3>
+                            <p>{{ com.commentaire }}</p>
+                        </div>
+                    </div>
                 {% else %}
-                    <p>No comments yet</p>
+                    <p>Vous n'avez pas encore mis de commentaires 😢</p>
                 {% endfor %}
                 </div>
         </div>

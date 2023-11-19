@@ -1,0 +1,88 @@
+.notes_container {
+    display: inline-flex;
+}
+
+.note_display {
+    width: 220px;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.note_display h3 {
+    height: 65px;
+}
+
+.note_display img{
+    border-radius: 5px;
+    aspect-ratio: 9 / 14;
+    width: 125px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0 29px rgba(49,54,68,.25);
+}
+
+.rating {
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.star {
+    color: gold;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.star:before {
+    content: '☆';
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 50%;
+    color: inherit;
+}
+
+.half {
+    display: inline-block;
+    position: absolute;
+    color: gold; /* Color for half-star */
+    width: 12px; /* Adjust width as needed */
+    overflow: hidden;
+}
+
+.half::before {
+    content: '★'; /* Unicode for full star */
+    position: absolute;
+}
+
+.comm_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.comm_display {
+    padding: 20px 5%;
+    display: flex;
+    width: 80%;
+    align-items: center;
+}
+
+.comm_display img{
+    border-radius: 5px;
+    aspect-ratio: 9 / 14;
+    width: 90px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0 29px rgba(49,54,68,.25);
+}
+
+.comm_content {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
