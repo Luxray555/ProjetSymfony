@@ -86,3 +86,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.profil-top img{
+    aspect-ratio: 1;
+    width: 150px;
+}
+.profil-top{
+    align-items: center;
+}
