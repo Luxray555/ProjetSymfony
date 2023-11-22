@@ -1,6 +1,13 @@
 .body{
     min-height: calc(100vh - 160px);
 }
+@font-face {
+    font-family: 'ArchivoBlack';
+    src: url('../fonts/ArchivoBlack-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }

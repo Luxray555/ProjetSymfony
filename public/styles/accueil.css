@@ -1,3 +1,192 @@
 body {
     background-color: #f2f2f2;
 }
+.anime-une{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.row-a{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    transition: all .4s;
+}
+.carte-row{
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 100px;
+    width: 200px;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: white;
+    transition: all .4s;
+    color: #ffffff;
+}
+.carte-row h5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    transition: all .4s;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-family: 'ArchivoBlack';
+
+}
+.carte-row .img{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.carte-row img{
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 9 / 13;
+    object-fit: cover;
+    object-position: center;
+    transition: all .4s;
+}
+.carte-row:hover img{
+    transform: scale(1.1);
+}
+.carte-row:hover .img{
+    object-fit: contain;
+}
+.carte-row:hover h5{
+    opacity: 1;
+    overflow: hidden;
+}
+.carte-row:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: white;
+    position: relative;
+}
+.container-a{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.sec1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+}
+.activite{
+    width: 100%;
+}
+.column-a{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 170px;
+}
+.carte-column{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0;
+    color: #333;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: white;
+    min-width: 100%;
+    min-height: 100%;
+    transition: all .5s;
+    height: 100%;
+}
+.carte-column.active{
+    opacity: 1;
+    z-index: 1;
+}
+.carte-column .img{
+    overflow: hidden;
+    aspect-ratio: 9 / 13;
+    width: 150px;
+    object-fit: contain;
+    object-position: center;
+}
+.carte-column:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: #333;
+}
+.carte-column img{
+    overflow: hidden;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: all .4s;
+}
+.carte-column:hover img{
+    transform: scale(1.1);
+}
+
+.anime-activite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+.anime-activite button{
+    background-color: #b6b6b6;
+    border: solid 1px #333;
+    border-radius: 50px;
+    width: 12px;
+    height: 12px;
+    padding: 0px;
+    transition: all .4s;
+}
+.anime-activite button.active{
+    background-color: #333;
+}
+
+.container-b{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.commentaire{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.carte-column .info{
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

@@ -4,93 +4,104 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('styles/accueil.css') }}">
-    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/stars.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('scripts/accueil.js') }}"></script>
 {% endblock %}
 
 {% block body %}
 
-    <div class="row m-4">
-        <div class="col-md-7">
-            <div class="container">
-                <h2>Anime en tendance</h2>
-                <div class="row">
-                    {% for anime in trendingAnime %}
-                        <div class="card col m-3 p-0" style="border: hidden; z-index: -10; max-width: 8.5rem; min-width: 8.5rem;">
-                            <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}" class="card-img-top" style="height: 10rem;">
-                            <h5 class="card-title">{{ anime.nom }}</h5>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="container">
-                <h2>Nouveautés</h2>
-                <div class="row">
-                    {% for anime in newAnime %}
-                        <div class="card col-md m-3 p-0" style="border: hidden; z-index: -10; max-width: 8.5rem; min-width: 8.5rem;">
-                            <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt={{ anime.nom }}anime" class="card-img-top" style="height: 10rem;">
-                            <h5 class="card-title">{{ anime.nom }}</h5>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+    <div class="sec1">
         {% if app.user %}
-        <div class="col-xl-5">
-            <div class="container">
-                <h2 class="h2">Activité de {{ app.user.username }}</h2>
-                <div class="row-cols-auto w-100 m-auto">
-
-                    {% for action in lastActions %}
-                        <div class="col p-2" style="height: 7rem">
-                            <div class="card h-100">
-                                <div class="container h-100 w-100">
-                                    <div class="row h-100 w-100">
-                                        <div class="col-3 h-100 p-0" style="width: 5rem;">
-                                            <img src="{{ vich_uploader_asset(action.anime, 'coverImageFile') }}" alt="{{ action.anime.nom }}" class="card-img h-100">
-                                        </div>
-                                        <div class="card-body col w-50 h-100" style="padding-right: 0">
-                                            {% if action.note is defined %}
-                                                <h5>Votre note :</h5>
-                                                <div class="d-flex flex-row justify-content-between h-100 w-100">
-                                                    <div class="rating">
-                                                        {% set fullStars = action.note | round(0, 'floor') %} {# Get the integer part for full stars #}
-                                                        {% set hasHalfStar = action.note - fullStars >= 0.5 %}
-                                                        {% for i in range(1, 5) %}
-                                                            {% if i <= fullStars %}
-                                                                <span class="star">&#9733;</span>
-                                                            {% elseif hasHalfStar %}
-                                                                {% set hasHalfStar = false %}
-                                                                <span class="star half">&#9733;</span>
-                                                                <span class="star">&#9734;</span>
-                                                            {% else %}
-                                                                <span class="star">&#9734;</span>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </div>
-                                                    <p class="align-self-end">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
-                                                </div>
-                                            {% else %}
-                                                <h5>Commentaire :</h5>
-                                                <div class="d-flex flex-row justify-content-between h-100 w-100">
-                                                    {% if action.commentaire|length > 40 %}
-                                                        <p>{{ action.commentaire[:40] ~ '...'}}</p>
-                                                    {% else %}
-                                                        <p>{{ action.commentaire}}</p>
-                                                    {% endif %}
-                                                    <p class="align-self-end">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
-                                                </div>
-                                            {% endif %}
-                                        </div>
+            <div class="activite">
+                <div class="container-b">
+                    <h2 class="h2">Activité de {{ app.user.username }}</h2>
+                    <div class="anime-activite">
+                        <div class="column-a">
+                            {% for key, action in lastActions %}
+                                <a class="carte-column {{ key==0 ? "active" : "" }}" href="{{ path('app_anime_show', {'id' : action.anime.id}) }}">
+                                    <div class="img" >
+                                        <img src="{{ vich_uploader_asset(action.anime, 'coverImageFile') }}" alt="{{ action.anime.nom }}">
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="info">
+                                        {% if action.note is defined %}
+                                            <h5>Note</h5>
+                                            <div class="note">
+                                                <div class="rating">
+                                                    {% set fullStars = action.note | round(0, 'floor') %} {# Get the integer part for full stars #}
+                                                    {% set hasHalfStar = action.note - fullStars >= 0.5 %}
+                                                    {% for i in range(1, 5) %}
+                                                        {% if i <= fullStars %}
+                                                            <span class="star">&#9733;</span>
+                                                        {% elseif hasHalfStar %}
+                                                            {% set hasHalfStar = false %}
+                                                            <span class="star half">&#9733;</span>
+                                                            <span class="star">&#9734;</span>
+                                                        {% else %}
+                                                            <span class="star">&#9734;</span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                                <p class="date-heure">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
+                                            </div>
+                                        {% else %}
+                                            <h5>Commentaire</h5>
+                                            <div class="commentaire">
+                                                {% if action.commentaire|length > 40 %}
+                                                    <p>{{ action.commentaire[:40] ~ '...'}}</p>
+                                                {% else %}
+                                                    <p>{{ action.commentaire}}</p>
+                                                {% endif %}
+                                                <p class="">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </a>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
-
+                        <div class="dot-btn">
+                            {% for i in range (1, lastActions | length) %}
+                                <button class="{{ i==1 ? "active" : "" }}"></button>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
-            {% endif %}
+        {% endif %}
+        <div class="anime-une">
+            <div class="container-a">
+                <h2>Anime en tendance</h2>
+                <div class="row-b">
+                    <div class="row-a">
+                        {% for anime in trendingAnime %}
+                            <a class="carte-row" href="{{ path('app_anime_show', {'id':anime.id}) }}">
+                                <div class="img">
+                                    <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
+                                </div>
+                                <h5>{{ anime.nom }}</h5>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-a">
+                <h2>Nouveautés</h2>
+                <div class="row-b">
+                    <div class="row-a">
+                        {% for anime in newAnime %}
+                            <a class="carte-row" href="{{ path('app_anime_show', {'id':anime.id}) }}">
+                                <div class="img">
+                                    <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
+                                </div>
+                                <h5>{{ anime.nom }}</h5>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

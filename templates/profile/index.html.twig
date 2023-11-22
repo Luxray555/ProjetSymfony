@@ -4,6 +4,7 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset("/styles/profile.css") }}">
+    <link rel="stylesheet" href="{{ asset('styles/stars.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -18,7 +19,7 @@
     <div>
         <div>
             <h2>Notes</h2>
-                <div class="ms-4 notes_container">
+                <div class="notes_container">
                 {% for note in user.getNotes() %}
                     <div class="note_display">
                         <a href="{{ path('app_anime_show', {'id': note.anime.id}) }}">
@@ -49,7 +50,7 @@
 
         <div>
             <h2>Commentaires</h2>
-                <div class="ms-4 comm_container">
+                <div class="comm_container">
                 {% for com in user.getCommentaires() %}
                     <div class="comm_display">
                         <a href="{{ path('app_anime_show', {'id': com.anime.id}) }}">

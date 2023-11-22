@@ -1,0 +1,35 @@
+.rating {
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.star {
+    color: gold;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.star:before {
+    content: '☆';
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 50%;
+    color: inherit;
+}
+
+.half {
+    display: inline-block;
+    position: absolute;
+    color: gold; /* Color for half-star */
+    width: 12px; /* Adjust width as needed */
+    overflow: hidden;
+}
+
+.half::before {
+    content: '★'; /* Unicode for full star */
+    position: absolute;
+}

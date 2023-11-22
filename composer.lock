@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26fca30635994f4eb593a8b0ef56da40",
+    "content-hash": "30598a0a7a9b79d3390533a33d427c91",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -7092,16 +7092,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v6.3.6",
+            "version": "v6.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "999ede244507c32b8e43aebaa10e9fce20de7c97"
+                "reference": "81acabba9046550e89634876ca64bfcd3c06aa0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/999ede244507c32b8e43aebaa10e9fce20de7c97",
-                "reference": "999ede244507c32b8e43aebaa10e9fce20de7c97",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/81acabba9046550e89634876ca64bfcd3c06aa0a",
+                "reference": "81acabba9046550e89634876ca64bfcd3c06aa0a",
                 "shasum": ""
             },
             "require": {
@@ -7156,7 +7156,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v6.3.6"
+                "source": "https://github.com/symfony/var-dumper/tree/v6.3.8"
             },
             "funding": [
                 {
@@ -7172,7 +7172,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-12T18:45:56+00:00"
+            "time": "2023-11-08T10:42:36+00:00"
         },
         {
             "name": "symfony/var-exporter",

@@ -28,7 +28,7 @@
 }
 .cardAnime .cover img{
     border-radius: 5px;
-    aspect-ratio: 9 / 14;
+    aspect-ratio: 9 / 13;
     width: 225px;
     object-fit: cover;
     object-position: center;
