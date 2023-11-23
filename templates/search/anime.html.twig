@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche Anime{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/searchanime.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="bloc">
+        <h1>Recherche Anime</h1>
+
+        {{ form_start(form1) }}
+        {{ form_row(form1.search) }}
+        <i class="search-icon fas fa-search"></i>
+        {{ form_end(form1) }}
+        <div class="container-block">
+            <div class="container-animes">
+                {% for anime in animes %}
+                    <a class="anime" href="{{ path('app_anime_show', {'id': anime.id}) }}">
+                        <div class="banner">
+                            <img src="{{ vich_uploader_asset(anime, 'bannerImageFile')}}" alt="banner">
+                        </div>
+                        <div class="top">
+                            <div class="cover">
+                                <img src="{{ vich_uploader_asset(anime, 'coverImageFile')}}" alt="cover">
+                            </div>
+                            <h3>{{ anime.nom | slice(0, 20) }}</h3>
+                        </div>
+                        <div class="info">
+                            <h6>Synopsis</h6>
+                            <p>
+                                {% if anime.synopsis %}
+                                    {{ anime.synopsis | slice(0, 70) }}...
+                                {% else %}
+                                    Aucun synopsis
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                {% else %}
+                    <p>Aucun utilisateur trouvé</p>
+                {% endfor %}
+
+            </div>
+            <nav class="pagination">
+                {{ knp_pagination_render(animes) }}
+            </nav>
+        </div>
+    </div>
+{% endblock %}

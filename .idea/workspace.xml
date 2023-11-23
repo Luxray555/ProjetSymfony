@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Modification des images de profile par defaut et de leurs css">
-      <change afterPath="$PROJECT_DIR$/public/fonts/ArchivoBlack-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/accueil.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/stars.css" afterDir="false" />
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil.">
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/user/banner/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/searchanime.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/searchuser.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search/anime.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/anime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/anime.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/body.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/body.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/component/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -175,6 +183,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -185,31 +195,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "searchPage",
+    "last_opened_file_path": "C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\search" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\banner" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\fonts" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\pp" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\anime\banner" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\anime\cover" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
     </key>
   </component>
   <component name="RunManager">
@@ -245,7 +257,8 @@
       <workItem from="1700332087491" duration="1613000" />
       <workItem from="1700333908152" duration="8039000" />
       <workItem from="1700354191119" duration="1406000" />
-      <workItem from="1700680956225" duration="15570000" />
+      <workItem from="1700680956225" duration="15698000" />
+      <workItem from="1700748129723" duration="15413000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -351,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700602868047</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil.">
+      <option name="closed" value="true" />
+      <created>1700696885598</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700696885598</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +401,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="Modification des pages de d'anime avec les notes et les commentaires." />
     <MESSAGE value="Modification des images de profile par defaut et de leurs css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification des images de profile par defaut et de leurs css" />
+    <MESSAGE value="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil." />
   </component>
 </project>

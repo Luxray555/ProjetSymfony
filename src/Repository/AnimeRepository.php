@@ -48,6 +48,18 @@ class AnimeRepository extends ServiceEntityRepository
             ;
     }
 
+    public function search(?string $nom): array
+    {
+        if (empty($nom)) {
+            return $this->findAll();
+        }
+        return $this->createQueryBuilder('a')
+            ->where('a.nom LIKE :nom')
+            ->setParameter('nom', '%' . $nom . '%')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    public function findOneBySomeField($value): ?Anime
 //    {
 //        return $this->createQueryBuilder('a')

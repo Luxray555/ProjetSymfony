@@ -6,12 +6,21 @@
     <div class="right d-flex flex-row justify-content-end w-100">
         <div class="rightsec d-flex flex-row gap-3 justify-content-center w-100">
             <a class="nav-element {{ app.request.attributes.get('_route') == 'app_accueil' ? 'active' : '' }}" href="{{ path('app_accueil') }}">Accueil</a>
-            <a class="nav-element {{ app.request.attributes.get('_route') == 'app_recherche' ? 'active' : '' }}" href="">Recherche</a>
+            <div class="nav-element nav-element-drop">
+                <div class="dropdown-toggle" role="button" id="searchDropdown">
+                    Recherche
+                </div>
+
+                <ul class="dropdown-a">
+                    <a class="dropdown-b" href="{{ path('app_search_anime') }}"><li>Anime</li></a>
+                    <a class="dropdown-b" href="{{ path('app_search_user') }}"><li>Utilisateur</li></a>
+                </ul>
+            </div>
             <a class="nav-element {{ app.request.attributes.get('_route') == 'app_commentaires' ? 'active' : '' }}" href="">Commentaires</a>
         </div>
         <div class="rightsec d-flex flex-row gap-2">
             {% if app.user %}
-                <a class="nav-element nav-profil d-flex flex-row {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}" href="{{ path('app_profile',{'id': app.user.id}) }}">
+                <a class="nav-element nav-profil d-flex flex-row {{ app.request.attributes.get('_route') == 'app_profile' and app.request.get('id') == app.user.id ? 'active' : '' }}" href="{{ path('app_profile',{'id': app.user.id}) }}">
                     <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture">
                     Profil
                 </a>

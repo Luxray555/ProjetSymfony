@@ -1,0 +1,7 @@
+knp_paginator:
+  page_range: 5                    # Number of pages displayed in the pagination menu (e.g., "1 2 [3] 4 5")
+  default_options:
+    page_name: page               # Name of the page parameter
+    sort_field_name: sort          # Name of the sort field parameter
+    sort_direction_name: direction # Name of the sort direction parameter
+    distinct: true
