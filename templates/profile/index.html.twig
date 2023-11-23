@@ -10,7 +10,7 @@
 {% block body %}
 
     <div class="profil-top d-flex m-lg-4 border">
-        <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" class="img-fluid">
+        <img src="{{ vich_uploader_asset(user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" class="img-fluid">
         <h1 class="ms-2">{{ user.getUsername() }}</h1>
     </div>
     <div>
