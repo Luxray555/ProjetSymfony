@@ -1,25 +1,45 @@
-let listBtn = document.querySelectorAll('.dot-btn button');
-let listSlide = document.querySelectorAll('.carte-column');
-let pos = 0;
+let listActiviteBtn = document.querySelectorAll('.activite .dot-btn button');
+let listActiviteSlide = document.querySelectorAll('.carte-column');
+let posActivite = 0;
 
-let change = (i) => {
-    listBtn[pos].classList.remove('active');
-    listSlide[pos].classList.remove('active');
+const change = (i, listBtn, pos, listSlide) => {
+    listBtn.forEach(btn => btn.classList.remove('active'));
+    listSlide.forEach(slide => slide.classList.remove('active'));
+
     pos = i;
+
     listBtn[pos].classList.add('active');
     listSlide[pos].classList.add('active');
 }
 
 let intervalActivite = setInterval(() => {
-    change((pos + 1) % listBtn.length);
+    change((posActivite + 1) % listActiviteSlide.length, listActiviteBtn, posActivite, listActiviteSlide);
 }, 10000);
 
-for (let i = 0; i < listBtn.length; i++) {
-    listBtn[i].addEventListener('click', () => {
+for (let i = 0; i < listActiviteBtn.length; i++) {
+    listActiviteBtn[i].addEventListener('click', () => {
         clearInterval(intervalActivite);
-        change(i);
+        change(i, listActiviteBtn, posActivite, listActiviteSlide);
         intervalActivite = setInterval(() => {
-            change((pos + 1) % listBtn.length);
+            change((posActivite + 1) % listActiviteSlide.length, listActiviteBtn, posActivite, listActiviteSlide);
+        }, 10000);
+    });
+}
+
+let listNewBtn = document.querySelectorAll('.anime-new .dot-btn button');
+let listNewSlide = document.querySelectorAll('.anime-new .new');
+let posNew = 0;
+
+let intervalNew = setInterval(() => {
+    change((posNew + 1) % listNewSlide.length, listNewBtn, posNew, listNewSlide);
+}, 10000);
+
+for (let i = 0; i < listNewBtn.length; i++) {
+    listNewBtn[i].addEventListener('click', () => {
+        clearInterval(intervalNew);
+        change(i, listNewBtn, posNew, listNewSlide);
+        intervalNew = setInterval(() => {
+            change((posNew + 1) % listNewSlide.length, listNewBtn, posNew, listNewSlide);
         }, 10000);
     });
 }

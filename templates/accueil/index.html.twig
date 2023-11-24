@@ -14,6 +14,29 @@
 {% block body %}
 
     <div class="sec1">
+        <div class="anime-new">
+            <div class="line">
+                <div class="dot-btn">
+                    {% for i in range (1, newAnime | length) %}
+                        <button class="{{ i==1 ? "active" : "" }}"></button>
+                    {% endfor %}
+                </div>
+                {% for key,anime in newAnime %}
+                    <div class="new {{ key==0 ? "active" : "" }}">
+                        <div class="img">
+                            <img src="{{ vich_uploader_asset(anime, 'bannerImageFile') }}" alt="{{ anime.nom }}">
+                        </div>
+                        <div class="info">
+                            <h5>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h5>
+                            <p>{{ anime.synopsis | length > 150 ? anime.synopsis | slice(0, 150) ~ "..." : anime.synopsis }}</p>
+                            <div class="voir-plus-btn">
+                                <a href="{{ path('app_anime_show', {'id':anime.id}) }}">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         {% if app.user %}
             <div class="activite">
                 <div class="container-b">
@@ -76,22 +99,6 @@
                 <div class="row-b">
                     <div class="row-a">
                         {% for anime in trendingAnime %}
-                            <a class="carte-row" href="{{ path('app_anime_show', {'id':anime.id}) }}">
-                                <div class="img">
-                                    <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
-                                </div>
-                                <h5>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h5>
-                            </a>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-a">
-                <h2>Nouveautés</h2>
-                <div class="row-b">
-                    <div class="row-a">
-                        {% for anime in newAnime %}
                             <a class="carte-row" href="{{ path('app_anime_show', {'id':anime.id}) }}">
                                 <div class="img">
                                     <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
