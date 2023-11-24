@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ user.getUsername() }}{% endblock %}
+{% block title %}{{ user.username }}{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset("/styles/profile.css") }}">
@@ -9,14 +9,25 @@
 
 {% block body %}
 
-    <div class="profil-top d-flex m-lg-4 border">
-        <img src="{{ vich_uploader_asset(user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" class="img-fluid">
-        <h1 class="ms-2">{{ user.getUsername() }}</h1>
+
+    <div class="banner" style="background: url('{{ vich_uploader_asset(user, "bannerImageFile")}}');">
+        {% if app.user.id == user.id %}
+            <div class="settings">
+                <a href="{{ path('app_profile_settings') }}">Settings</a>
+            </div>
+        {% endif %}
+            <div class="container">
+                    <div class="banner-content">
+                    <img src="{{ vich_uploader_asset(user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture">
+                    <div class="user-info">
+                        <h5>{{ user.getUsername() }}</h5>
+                        <p>{{ user.bio }}</p>
+                    </div>
+                </div>
+            </div>
     </div>
-    <div>
-        <p>{{ user.bio }}</p>
-    </div>
-    <div>
+
+    <div class="content">
         <div>
             <h2>Notes</h2>
                 <div class="notes_container">
@@ -25,7 +36,7 @@
                         <a href="{{ path('app_anime_show', {'id': note.anime.id}) }}">
                             <img class="cover" src="{{ vich_uploader_asset(note.anime, "coverImageFile") }}" alt="Note Image">
                         </a>
-                        <h3>{{ note.anime.nom }}</h3>
+                        <h3>{{ note.anime.nom|length > 20 ? note.anime.nom|slice(0, 20) ~ '...' : note.anime.nom }}</h3>
                         <div class="rating">
                             {% set fullStars = note.note | round(0, 'floor') %} {# Get the integer part for full stars #}
                             {% set hasHalfStar = note.note - fullStars >= 0.5 %}

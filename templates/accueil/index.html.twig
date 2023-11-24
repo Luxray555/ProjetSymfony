@@ -80,7 +80,7 @@
                                 <div class="img">
                                     <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
                                 </div>
-                                <h5>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h5>
+                                <h5>{{ anime.nom }}</h5>
                             </a>
                         {% endfor %}
                     </div>
@@ -96,7 +96,7 @@
                                 <div class="img">
                                     <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
                                 </div>
-                                <h5>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h5>
+                                <h5>{{ anime.nom }}</h5>
                             </a>
                         {% endfor %}
                     </div>
