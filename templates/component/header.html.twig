@@ -12,8 +12,8 @@
                 </div>
 
                 <ul class="dropdown-a">
-                    <a class="dropdown-b" href="{{ path('app_search_anime') }}"><li>Anime</li></a>
-                    <a class="dropdown-b" href="{{ path('app_search_user') }}"><li>Utilisateur</li></a>
+                    <a class="dropdown-b" href="{{ path('app_search_anime') }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_search_anime' ? 'active' : '' }}">Anime</li></a>
+                    <a class="dropdown-b" href="{{ path('app_search_user') }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_search_user' ? 'active' : '' }}">Utilisateur</li></a>
                 </ul>
             </div>
             <a class="nav-element {{ app.request.attributes.get('_route') == 'app_commentaires' ? 'active' : '' }}" href="">Commentaires</a>
