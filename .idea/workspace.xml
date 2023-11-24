@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Modification du formulaire de note et des asserts de la note">
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Texte de nom utilisateur et anime ajout des ... si le nom ou l'anime est &gt; 20 caractères">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/accueil.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/accueil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/accueil.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search/anime.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/anime.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/search/user.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/user.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +184,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;upgradeAccueil&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Luxray555/PhpstormProjects/ProjetSymfony&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -245,6 +245,9 @@
       <workItem from="1700680956225" duration="15698000" />
       <workItem from="1700748129723" duration="15413000" />
       <workItem from="1700817569431" duration="1646000" />
+      <workItem from="1700836301407" duration="277000" />
+      <workItem from="1700837706120" duration="6619000" />
+      <workItem from="1700847304294" duration="4754000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -374,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700818945858</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Texte de nom utilisateur et anime ajout des ... si le nom ou l'anime est &gt; 20 caractères">
+      <option name="closed" value="true" />
+      <created>1700836572127</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700836572127</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +417,7 @@
     <MESSAGE value="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil." />
     <MESSAGE value="Modification image profil dans la page profil" />
     <MESSAGE value="Modification du formulaire de note et des asserts de la note" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification du formulaire de note et des asserts de la note" />
+    <MESSAGE value="Texte de nom utilisateur et anime ajout des ... si le nom ou l'anime est &gt; 20 caractères" />
+    <option name="LAST_COMMIT_MESSAGE" value="Texte de nom utilisateur et anime ajout des ... si le nom ou l'anime est &gt; 20 caractères" />
   </component>
 </project>
