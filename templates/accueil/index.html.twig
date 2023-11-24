@@ -94,16 +94,16 @@
             </div>
         {% endif %}
         <div class="anime-une">
-            <div class="container-a">
-                <h2>Anime en tendance</h2>
+           <div class="container-a">
+                <h2>Nouveautés</h2>
                 <div class="row-b">
                     <div class="row-a">
-                        {% for anime in trendingAnime %}
+                        {% for anime in newAnime %}
                             <a class="carte-row" href="{{ path('app_anime_show', {'id':anime.id}) }}">
                                 <div class="img">
                                     <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
                                 </div>
-                                <h5>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h5>
+                                <h5>{{ anime.nom }}</h5>
                             </a>
                         {% endfor %}
                     </div>
