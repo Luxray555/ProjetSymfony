@@ -1,0 +1,51 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container{
+    margin-top: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.register-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.register-container a {
+    text-decoration: underline;
+    color: #0f172a;
+}
+
+.register-container label {
+    margin-top: 10px;
+}
+
+.register-container input {
+    width: 50%;
+}
+
+.register-container button {
+    margin-top: 20px;
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+}
+
+.register-container button:hover {
+    background: #0a53be;
+    color: white;
+    border: transparent;
+}

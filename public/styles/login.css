@@ -1,0 +1,44 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container{
+    margin-top: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login-container a {
+    text-decoration: underline;
+    color: #0f172a;
+}
+
+.login-container label {
+    margin-top: 10px;
+}
+
+.login-container input {
+    width: 50%;
+}
+
+.login-container button {
+    margin-top: 20px;
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+}
+
+.login-container button:hover {
+    background: #0a53be;
+    color: white;
+    border: transparent;
+}
