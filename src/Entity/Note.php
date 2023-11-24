@@ -6,6 +6,7 @@ use App\Repository\NoteRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: NoteRepository::class)]
 #[UniqueEntity(
@@ -20,6 +21,7 @@ class Note
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Assert\Choice(choices: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ,4.5, 5])]
     private ?float $note = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable:true, options: ["default" => "CURRENT_TIMESTAMP"])]
