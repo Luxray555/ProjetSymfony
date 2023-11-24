@@ -25,7 +25,7 @@
                             <div class="cover">
                                 <img src="{{ vich_uploader_asset(anime, 'coverImageFile')}}" alt="cover">
                             </div>
-                            <h3>{{ anime.nom | slice(0, 20) }}</h3>
+                            <h3>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h3>
                         </div>
                         <div class="info">
                             <h6>Synopsis</h6>
@@ -39,7 +39,7 @@
                         </div>
                     </a>
                 {% else %}
-                    <p>Aucun utilisateur trouvé</p>
+                    <p>Aucun anime trouvé</p>
                 {% endfor %}
 
             </div>
