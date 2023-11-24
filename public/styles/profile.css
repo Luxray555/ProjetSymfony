@@ -1,3 +1,87 @@
+.banner  {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    background-size:cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.banner img {
+    max-height: 230px;
+    max-width: 160px;
+    border-radius: 2px;
+}
+
+.container {
+    max-width: 1140px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    height: 100%;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 100%;
+}
+
+.user-info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+}
+
+.user-info p {
+    padding-left: 20px;
+}
+
+.settings {
+    align-self: end;
+    padding: 10px 20px;
+}
+
+.settings a {
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 678px) {
+
+    .banner {
+        height: auto;
+    }
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .banner-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-info {
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .user-info p {
+        padding-left: 0;
+    }
+}
+
+.content {
+    padding: 25px;
+}
+
 .notes_container {
     display: inline-flex;
     flex-wrap: wrap;
@@ -7,7 +91,7 @@
 
 .note_display {
     width: 220px;
-    padding: 20px 0px;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
