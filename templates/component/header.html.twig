@@ -6,7 +6,16 @@
     <div class="right d-flex flex-row justify-content-end w-100">
         <div class="rightsec d-flex flex-row gap-3 justify-content-center w-100">
             <a class="nav-element {{ app.request.attributes.get('_route') == 'app_accueil' ? 'active' : '' }}" href="{{ path('app_accueil') }}">Accueil</a>
-            <a class="nav-element {{ app.request.attributes.get('_route') == 'app_recherche' ? 'active' : '' }}" href="">Recherche</a>
+            <div class="nav-element nav-element-drop">
+                <div class="dropdown-toggle" role="button" id="searchDropdown">
+                    Recherche
+                </div>
+
+                <ul class="dropdown-a">
+                    <a class="dropdown-b" href="{{ path('app_search_anime') }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_search_anime' ? 'active' : '' }}">Anime</li></a>
+                    <a class="dropdown-b" href="{{ path('app_search_user') }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_search_user' ? 'active' : '' }}">Utilisateur</li></a>
+                </ul>
+            </div>
             <a class="nav-element {{ app.request.attributes.get('_route') == 'app_commentaires' ? 'active' : '' }}" href="">Commentaires</a>
         </div>
         <div class="rightsec d-flex flex-row gap-2">
