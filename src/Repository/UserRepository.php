@@ -39,6 +39,18 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->getEntityManager()->flush();
     }
 
+    public function findLastActionsForUser($user): array
+    {
+        $lastComments = $this->getEntityManager()->getRepository('App\Entity\Commentaire')->findLastCommentsForUser($user);
+        $lastNotes = $this->getEntityManager()->getRepository('App\Entity\Note')->findLastNotesForUser($user);
+        $lastActions = array_merge($lastNotes, $lastComments);
+        usort($lastActions, function($a, $b) {
+            return $a->getDateCreation() < $b->getDateCreation();
+        });
+        $lastActions = array_slice($lastActions, 0, 4);
+        return $lastActions;
+    }
+
     public function search(?string $username): array
     {
         if (empty($username)) {

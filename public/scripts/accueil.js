@@ -1,45 +1,36 @@
-let listActiviteBtn = document.querySelectorAll('.activite .dot-btn button');
-let listActiviteSlide = document.querySelectorAll('.carte-column');
-let posActivite = 0;
+function initializeSlider(buttonsSelector, slidesSelector) {
+    const buttons = document.querySelectorAll(buttonsSelector);
+    const slides = document.querySelectorAll(slidesSelector);
+    let position = 0;
+    let interval;
 
-const change = (i, listBtn, pos, listSlide) => {
-    listBtn.forEach(btn => btn.classList.remove('active'));
-    listSlide.forEach(slide => slide.classList.remove('active'));
+    function changeSlide(i) {
+        buttons[position].classList.remove('active');
+        slides[position].classList.remove('active');
 
-    pos = i;
+        position = i;
 
-    listBtn[pos].classList.add('active');
-    listSlide[pos].classList.add('active');
-}
+        buttons[position].classList.add('active');
+        slides[position].classList.add('active');
+    }
 
-let intervalActivite = setInterval(() => {
-    change((posActivite + 1) % listActiviteSlide.length, listActiviteBtn, posActivite, listActiviteSlide);
-}, 10000);
-
-for (let i = 0; i < listActiviteBtn.length; i++) {
-    listActiviteBtn[i].addEventListener('click', () => {
-        clearInterval(intervalActivite);
-        change(i, listActiviteBtn, posActivite, listActiviteSlide);
-        intervalActivite = setInterval(() => {
-            change((posActivite + 1) % listActiviteSlide.length, listActiviteBtn, posActivite, listActiviteSlide);
+    function startInterval() {
+        interval = setInterval(() => {
+            changeSlide((position + 1) % slides.length);
         }, 10000);
+    }
+
+    startInterval();
+
+    buttons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+            clearInterval(interval);
+            changeSlide(i);
+            startInterval();
+        });
     });
 }
 
-let listNewBtn = document.querySelectorAll('.anime-new .dot-btn button');
-let listNewSlide = document.querySelectorAll('.anime-new .new');
-let posNew = 0;
+initializeSlider('.activite .dot-btn button', '.carte-column');
+initializeSlider('.anime-new .dot-btn button', '.anime-new .new');
 
-let intervalNew = setInterval(() => {
-    change((posNew + 1) % listNewSlide.length, listNewBtn, posNew, listNewSlide);
-}, 10000);
-
-for (let i = 0; i < listNewBtn.length; i++) {
-    listNewBtn[i].addEventListener('click', () => {
-        clearInterval(intervalNew);
-        change(i, listNewBtn, posNew, listNewSlide);
-        intervalNew = setInterval(() => {
-            change((posNew + 1) % listNewSlide.length, listNewBtn, posNew, listNewSlide);
-        }, 10000);
-    });
-}

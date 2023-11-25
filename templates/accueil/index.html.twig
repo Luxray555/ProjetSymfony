@@ -67,7 +67,7 @@
                                                         {% endif %}
                                                     {% endfor %}
                                                 </div>
-                                                <p class="date-heure">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
+                                                <p class="date-heure">{{ action.dateCreation|date('d-m-Y H:i') }}</p>
                                             </div>
                                         {% else %}
                                             <h5>Commentaire</h5>
@@ -77,7 +77,7 @@
                                                 {% else %}
                                                     <p>{{ action.commentaire}}</p>
                                                 {% endif %}
-                                                <p class="">{{ action.dateCreation|date('Y-m-d H:i') }}</p>
+                                                <p class="">{{ action.dateCreation|date('d-m-Y H:i') }}</p>
                                             </div>
                                         {% endif %}
                                     </div>
@@ -95,10 +95,10 @@
         {% endif %}
         <div class="anime-une">
            <div class="container-a">
-                <h2>Nouveautés</h2>
+                <h2>Anime en tendance</h2>
                 <div class="row-b">
                     <div class="row-a">
-                        {% for anime in newAnime %}
+                        {% for anime in trendingAnime %}
                             <a class="carte-row" href="{{ path('app_anime_show', {'id':anime.id}) }}">
                                 <div class="img">
                                     <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="{{ anime.nom }}">
