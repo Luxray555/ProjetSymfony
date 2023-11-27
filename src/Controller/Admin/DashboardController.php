@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Anime;
 use App\Entity\Commentaire;
+use App\Entity\Genre;
 use App\Entity\Note;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -39,7 +40,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('ProjetSymfony');
+            ->setTitle('AnimeWorld');
     }
 
     public function configureMenuItems(): iterable
@@ -49,5 +50,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Animes', 'fas fa-film', Anime::class);
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('Notes', 'fas fa-star', Note::class);
+        yield MenuItem::linkToCrud('Genres', 'fas fa-tv', Genre::class);
     }
 }

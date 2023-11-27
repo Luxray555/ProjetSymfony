@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AnimeRepository::class)]
@@ -55,11 +56,16 @@ class Anime
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $dateAjout = null;
 
+    #[ORM\ManyToMany(targetEntity: Genre::class, mappedBy: 'animes')]
+    #[Assert\Count(min: 1, minMessage: "L'anime doit avoir au moins un genre.")]
+    private Collection $genres;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
         $this->notes = new ArrayCollection();
         $this->dateAjout = new \DateTimeImmutable();
+        $this->genres = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -248,6 +254,33 @@ class Anime
     public function setDateAjout(?\DateTimeImmutable $dateAjout): static
     {
         $this->dateAjout = $dateAjout;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Genre>
+     */
+    public function getGenres(): Collection
+    {
+        return $this->genres;
+    }
+
+    public function addGenre(Genre $genre): static
+    {
+        if (!$this->genres->contains($genre)) {
+            $this->genres->add($genre);
+            $genre->addAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGenre(Genre $genre): static
+    {
+        if ($this->genres->removeElement($genre)) {
+            $genre->removeAnime($this);
+        }
 
         return $this;
     }

@@ -17,10 +17,12 @@
 
 .form-search .row-control .form-control{
     width: 100%;
-    padding-right: 30px;
+    padding-left: 40px;
+    transition: all .4s;
 }
 .form-search .row-control .form-control:focus{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding-left: 10px;
 }
 .form-search:focus-within .search-icon{
     opacity: 0;
@@ -29,7 +31,7 @@
 .form-search .search-icon {
     position: absolute;
     top: 50%;
-    right: 10px;
+    left: 10px;
     transform: translateY(-50%);
     transition: all .2s;
 }
