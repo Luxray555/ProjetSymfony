@@ -90,6 +90,7 @@
 .nav-profil img{
     aspect-ratio: 1;
     width: 25px;
+    border-radius: 100%;
 }
 
 @media screen and (max-width: 780px) {
