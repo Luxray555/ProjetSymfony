@@ -5,3 +5,5 @@ knp_paginator:
     sort_field_name: sort          # Name of the sort field parameter
     sort_direction_name: direction # Name of the sort direction parameter
     distinct: true
+  template:
+    pagination: 'paginator/sliding.html.twig'

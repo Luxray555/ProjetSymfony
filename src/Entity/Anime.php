@@ -60,6 +60,10 @@ class Anime
     #[Assert\Count(min: 1, minMessage: "L'anime doit avoir au moins un genre.")]
     private Collection $genres;
 
+    #[ORM\ManyToOne(inversedBy: 'animes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?AnimeStatus $status = null;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
@@ -281,6 +285,18 @@ class Anime
         if ($this->genres->removeElement($genre)) {
             $genre->removeAnime($this);
         }
+
+        return $this;
+    }
+
+    public function getStatus(): ?AnimeStatus
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?AnimeStatus $status): static
+    {
+        $this->status = $status;
 
         return $this;
     }

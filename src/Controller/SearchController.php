@@ -6,6 +6,8 @@ use App\Entity\User;
 use App\Form\SearchAnimeType;
 use App\Form\SearchUserType;
 use App\Repository\AnimeRepository;
+use App\Repository\AnimeStatusRepository;
+use App\Repository\GenreRepository;
 use App\Repository\UserRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,11 +50,14 @@ class SearchController extends AbstractController
     }
 
     #[Route('/search/anime', name: 'app_search_anime',methods: ['GET'])]
-    public function anime(Request $request, AnimeRepository $animeRepository,PaginatorInterface $paginator): Response
+    public function anime(Request $request, AnimeRepository $animeRepository, PaginatorInterface $paginator): Response
     {
         $search = $request->query->get('search');
+        $genres = explode(',', $request->query->get('genres'));
+        $status = explode(',', $request->query->get('status'));
+
         $page = $request->query->get('page', 1);
-        $animes = $animeRepository->search($search);
+        $animes = $animeRepository->search($search, $genres, $status);
 
         $pagination = $paginator->paginate(
             $animes,
@@ -66,9 +71,12 @@ class SearchController extends AbstractController
         $form1->handleRequest($request);
 
         if ($form1->isSubmitted() && $form1->isValid()) {
+
             return $this->redirectToRoute('app_search_anime', [
                 'search'=>$form1->get('search')->getData(),
                 'page' => $page,
+                'genres' => implode(',', $form1->get('genres')->getData()),
+                'status' => implode(',', $form1->get('status')->getData()),
             ], Response::HTTP_SEE_OTHER);
         }
 

@@ -39,7 +39,6 @@ class AnimeRepository extends ServiceEntityRepository
      */
     public function findTrendingAnime(): array
     {
-        // Temporaire
         return $this->createQueryBuilder('a')
             ->orderBy('a.id', 'ASC')
             ->setMaxResults(4)
@@ -48,16 +47,32 @@ class AnimeRepository extends ServiceEntityRepository
             ;
     }
 
-    public function search(?string $nom): array
+    public function search(?string $nom, ?array $genres, ?array $status): array
     {
-        if (empty($nom)) {
-            return $this->findAll();
+        $queryBuilder = $this->createQueryBuilder('a');
+
+        if (!empty($nom)) {
+            $queryBuilder->andWhere('a.nom LIKE :nom')
+                ->setParameter('nom', '%' . $nom . '%');
         }
-        return $this->createQueryBuilder('a')
-            ->where('a.nom LIKE :nom')
-            ->setParameter('nom', '%' . $nom . '%')
-            ->getQuery()
-            ->getResult();
+
+        if ($genres !== [""]) {
+            $queryBuilder
+                ->leftJoin('a.genres', 'g')
+                ->andWhere('g.nom IN (:genres)')
+                ->setParameter('genres', $genres);
+        }
+
+        if ($status !== [""]) {
+            $queryBuilder
+                ->leftJoin('a.status', 's')
+                ->andWhere('s.nom IN (:status)')
+                ->setParameter('status', $status);
+        }
+
+        $queryBuilder->orderBy('a.nom', 'ASC');
+
+        return $queryBuilder->getQuery()->getResult();
     }
 
 //    public function findOneBySomeField($value): ?Anime
