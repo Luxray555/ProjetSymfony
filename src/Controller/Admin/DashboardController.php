@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Anime;
+use App\Entity\AnimeStatus;
 use App\Entity\Commentaire;
 use App\Entity\Genre;
 use App\Entity\Note;
@@ -51,5 +52,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('Notes', 'fas fa-star', Note::class);
         yield MenuItem::linkToCrud('Genres', 'fas fa-tv', Genre::class);
+        yield MenuItem::linkToCrud('Status Anime', 'fas fa-exclamation', AnimeStatus::class);
     }
 }

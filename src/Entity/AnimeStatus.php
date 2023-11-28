@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\GenreRepository;
+use App\Repository\AnimeStatusRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: GenreRepository::class)]
-class Genre
+#[ORM\Entity(repositoryClass: AnimeStatusRepository::class)]
+class AnimeStatus
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,7 +18,7 @@ class Genre
     #[ORM\Column(length: 100)]
     private ?string $nom = null;
 
-    #[ORM\ManyToMany(targetEntity: Anime::class, inversedBy: 'genres')]
+    #[ORM\OneToMany(mappedBy: 'status', targetEntity: Anime::class)]
     private Collection $animes;
 
     public function __construct()
@@ -55,6 +55,7 @@ class Genre
     {
         if (!$this->animes->contains($anime)) {
             $this->animes->add($anime);
+            $anime->setStatus($this);
         }
 
         return $this;
@@ -62,7 +63,12 @@ class Genre
 
     public function removeAnime(Anime $anime): static
     {
-        $this->animes->removeElement($anime);
+        if ($this->animes->removeElement($anime)) {
+            // set the owning side to null (unless already changed)
+            if ($anime->getStatus() === $this) {
+                $anime->setStatus(null);
+            }
+        }
 
         return $this;
     }
@@ -71,4 +77,5 @@ class Genre
     {
         return $this->nom;
     }
+
 }
