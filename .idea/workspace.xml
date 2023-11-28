@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout des genres et des status d'anime + modification de la page de recherche d'anime + ajout de la librairie twig component">
-      <change afterPath="$PROJECT_DIR$/public/styles/error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/choicelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/choicelist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/searchAnime.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/searchAnime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/searchanime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/searchanime.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/searchuser.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/searchuser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SearchUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchUserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search/anime.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/anime.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search/user.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/user.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,12 @@
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="Luxray555" />
+        <option name="repository" value="ProjetSymfony" />
+      </RepoCoordinatesHolder>
+    </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="4b6d3cd3-9a39-4ea6-b853-1f10c7d33cf5" />
@@ -201,7 +210,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/error-page",
+    "git-widget-placeholder": "feature/search-user-update",
     "last_opened_file_path": "C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -455,6 +464,7 @@
     <MESSAGE value="Modification du formulaire de note et des asserts de la note" />
     <MESSAGE value="Modification date (d-m-Y) + bug slider accueil fix + max des dernière action de l'utilisateur 8-&gt;4" />
     <MESSAGE value="Creation de l'entité Genre" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation de l'entité Genre" />
+    <MESSAGE value="Ajout des pages d'erreurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des pages d'erreurs" />
   </component>
 </project>

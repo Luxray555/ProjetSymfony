@@ -3,6 +3,7 @@
 {% block title %}Recherche Anime{% endblock %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/search.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/searchanime.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/pagination.css') }}">
 {% endblock %}
@@ -19,6 +20,7 @@
             }
         };
     </script>
+    <script src="{{ asset('scripts/search.js') }}"></script>
     <script src="{{ asset('scripts/searchanime.js') }}"></script>
     <script src="{{ asset('scripts/choicelist.js') }}"></script>
 {% endblock %}
