@@ -1,17 +1,3 @@
-.bloc{
-    padding: 10px 20px;
-}
-
-.form-search{
-    margin-top: 30px;
-    max-width: 400px;
-    gap: 20px;
-}
-
-.search-user .form-control{
-    width: 100%;
-}
-
 .container-block{
     width: 100%;
     display: flex;

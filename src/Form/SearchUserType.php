@@ -18,10 +18,16 @@ class SearchUserType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Rechercher un utilisateur',
-                    'class' => 'form-control',
+                    'class' => 'form-control search-control',
                 ],
                 'required' => false,
             ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Rechercher',
+                'attr' => [
+                    'class' => 'form-control btn-control',
+                ],
+            ]);
         ;
     }
 

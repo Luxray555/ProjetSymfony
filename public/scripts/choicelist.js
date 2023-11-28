@@ -1,3 +1,5 @@
+let choiceBox = document.querySelectorAll('.form-search .choice-list');
+
 document.addEventListener('DOMContentLoaded', function () {
     let list = {};
     for (let i = 0; i < choiceBox.length; i++) {
