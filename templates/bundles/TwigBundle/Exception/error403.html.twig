@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès refusé{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/error.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-error">
+        <div class="error">
+            <h1>403 - Accès refusé</h1>
+            <p>Vous n'avez pas l'autorisation d'accéder à cette page.</p>
+            <a href="/">Retour à la page d'accueil</a>
+        </div>
+    </div>
+{% endblock %}
