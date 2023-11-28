@@ -250,6 +250,7 @@
     background-color: rgba(0,0,0,0.7);
     color: white;
     max-width: 500px;
+    min-width: 240px;
     opacity: 0;
     transform: translate(200px, 0px);
     transition: all .7s;
