@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+
+{% block title %}{{ ticket.titre }}{% endblock %}
+
+{% block body %}
+    <div class="p-3 gap-3 flex items-center">
+        <a href="{{ (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) ? path('app_ticket_index') : "/" }}" class="text-3xl font-extrabold"><i class="fas fa-arrow-left"></i></a>
+        <h1 class="text-4xl font-bold">{{ ticket.titre }}</h1>
+
+        {% if ticket.ouvert %}
+            <div class="bg-green-400 rounded-lg px-1 py-0.5 text-sm flex items-center justify-center">Ouvert</div>
+            {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
+            <a class="btn" href="{{ path('app_ticket_status', {'id': ticket.id}) }}">Fermer le ticket</a>
+            {% endif %}
+        {% else %}
+            <div class="bg-red-400 rounded-lg px-1 py-0.5 text-sm flex items-center justify-center">Fermé</div>
+            {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
+            <a class="btn" href="{{ path('app_ticket_status', {'id': ticket.id}) }}">Ouvrir le ticket</a>
+            {% endif %}
+        {% endif %}
+
+    </div>
+
+    <div class="flex items-center justify-center flex-col gap-4">
+        <div class="w-4/5 border-2 border-gray-400 p-3 rounded-lg">
+            <div class="flex gap-3 items-center">
+                <h2 class="text-yellow-500 text-md font-semibold">{{ ticket.auteur.username }}</h2>
+                <h3 class="text-sm">{{ ticket.date|format_datetime('short', 'short', locale='fr') }}</h3>
+            </div>
+            <p>{{ ticket.description }}</p>
+        </div>
+
+        {% for reponse in ticket.reponseTickets %}
+            <div class="w-4/5 border-2 p-3 rounded-lg">
+                <div class="flex gap-3 items-center">
+                    <h2 class="text-yellow-500 text-md font-semibold">{{ reponse.auteur.username }}</h2>
+                    <h3 class="text-sm">{{ reponse.date|format_datetime('short', 'short', locale='fr') }}</h3>
+                </div>
+                <p>{{ reponse.contenu }}</p>
+            </div>
+        {% endfor %}
+
+        {% if ticket.ouvert and app.user %}
+            {{ form_start(form, { 'attr': {'class': 'w-4/5'}}) }}
+                {{ form_widget(form.contenu, {'attr': {'class': 'w-full border-2 p-3 rounded-lg resize-none', 'placeholder': 'Votre réponse...'}}) }}
+                <button class="btn my-3">{{ button_label|default('Répondre') }}</button>
+            {{ form_end(form) }}
+        {% endif %}
+
+    </div>
+{% endblock %}

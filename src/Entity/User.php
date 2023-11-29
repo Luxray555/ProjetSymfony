@@ -71,10 +71,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Note::class)]
     private Collection $notes;
 
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: ReponseTicket::class)]
+    private Collection $reponseTickets;
+
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Ticket::class)]
+    private Collection $tickets;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
         $this->notes = new ArrayCollection();
+        $this->reponseTickets = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -314,6 +321,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($note->getUser() === $this) {
                 $note->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ReponseTicket>
+     */
+    public function getReponseTickets(): Collection
+    {
+        return $this->reponseTickets;
+    }
+
+    public function addReponseTicket(ReponseTicket $reponseTicket): static
+    {
+        if (!$this->reponseTickets->contains($reponseTicket)) {
+            $this->reponseTickets->add($reponseTicket);
+            $reponseTicket->setAuteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReponseTicket(ReponseTicket $reponseTicket): static
+    {
+        if ($this->reponseTickets->removeElement($reponseTicket)) {
+            // set the owning side to null (unless already changed)
+            if ($reponseTicket->getAuteur() === $this) {
+                $reponseTicket->setAuteur(null);
             }
         }
 

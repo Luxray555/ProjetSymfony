@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Ticket{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="p-3 gap-3 flex items-center">
+        <a href="{{ path('app_tickets_user') }}" class="text-3xl font-extrabold"><i class="fas fa-arrow-left"></i></a>
+        <h1 class="text-4xl font-bold">Ouvrir un nouveau ticket</h1>
+    </div>
+
+    <div class="flex items-center justify-center">
+        {{ form_start(form, { 'attr': {'class': 'w-4/5'}}) }}
+        {{ form_widget(form.titre, {'attr': {'class': 'w-1/5 border-2 my-3 p-1 rounded-lg resize-none', 'placeholder': 'Titre...'}}) }}
+        {{ form_widget(form.description, {'attr': {'class': 'w-full border-2 p-3 rounded-lg resize-none', 'placeholder': 'Contenu de votre ticket...'}}) }}
+        <button class="btn m-3">{{ button_label|default('Envoyer') }}</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

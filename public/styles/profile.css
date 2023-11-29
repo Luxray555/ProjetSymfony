@@ -31,6 +31,11 @@
     width: 100%;
 }
 
+.pfp {
+    aspect-ratio: 1/1;
+    width: 250px;
+}
+
 .user-info {
     color: white;
     display: flex;
