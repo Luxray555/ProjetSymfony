@@ -2,7 +2,9 @@
 
 namespace App\Repository;
 
+use App\Entity\Anime;
 use App\Entity\Note;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -26,6 +28,7 @@ class NoteRepository extends ServiceEntityRepository
      */
     public function findLastNotesForUser($user): array
     {
+
         return $this->createQueryBuilder('n')
             ->andWhere('n.user = :user')
             ->setParameter('user', $user)
@@ -34,6 +37,20 @@ class NoteRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    public function updateNote(Note $note, User $user, Anime $anime): bool
+    {
+
+        return $this->createQueryBuilder('n')->update('App:Note', 'n')
+            ->set('n.note', ':note')
+            ->where('n.anime = :anime')
+            ->andWhere('n.user = :user')
+            ->setParameter('note', $note->getNote())
+            ->setParameter('anime', $anime)
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->execute();
     }
 
 //    public function findOneBySomeField($value): ?Note

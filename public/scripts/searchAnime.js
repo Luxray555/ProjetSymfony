@@ -1,8 +1,6 @@
 let filterBtn = document.querySelector('.form-search .filter-btn');
 let filter = document.querySelector('.form-search .filter');
 
-let choiceBox = document.querySelectorAll('.form-search .choice-list');
-
 filterBtn.addEventListener('click', function () {
     filter.classList.toggle('active');
     filterBtn.classList.toggle('active');
