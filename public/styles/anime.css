@@ -78,13 +78,13 @@
 .interact .bloc h3{
     color: white;
     font-size: calc(1rem + 0.5vw);
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .interact .bloc p{
     color: white;
     font-size: calc(0.6rem + 0.5vw);
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .interact .commentaires{
     display: flex;
@@ -96,7 +96,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0 20px 0;
 }
 .interact .form{
     display: flex;
