@@ -25,20 +25,23 @@
         <div class="rightsec d-flex flex-row gap-2">
             {% if app.user %}
                 {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
-                    <div class="nav-element nav-element-drop">
-                        <img class="dropdown-toggle visible aspect-square w-16 rounded-full" src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
-
+                    <div class="nav-element nav-image nav-element-drop">
+                        <div class="img-header">
+                            <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                        </div>
                         <ul class="dropdown-a">
-                            <a class="dropdown-b" href="{{ path('app_profile',{'id': app.user.id}) }}"><li class="nav-element">Profil</li></a>
+                            <a class="dropdown-b" href="{{ path('app_profile',{'id': app.user.id}) }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">Profil</li></a>
                             {% if (is_granted('ROLE_ADMIN')) %}
                             <a class="dropdown-b" href="/admin"><li class="nav-element">Admin</li></a>
                             {% endif %}
-                            <a class="dropdown-b" href="/service-client"><li class="nav-element">Sv. Client</li></a>
+                            <a class="dropdown-b" href="/service-client"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_ticket_index' ? 'active' : '' }}">Sv. Client</li></a>
                         </ul>
                     </div>
                 {% else %}
                     <a class="nav-element" role="button" href="{{ path('app_profile',{'id': app.user.id}) }}">
-                        <img class="visible aspect-square w-16 rounded-full" src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                        <div class="img-header">
+                            <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                        </div>
                     </a>
                 {% endif %}
 
