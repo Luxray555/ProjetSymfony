@@ -1,35 +1,61 @@
-.rating {
-    font-size: 24px;
-    display: inline-block;
-    position: relative;
+.stars{
+    display: flex;
+    flex-direction: row;
 }
-
-.star {
-    color: gold;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
+.stars input[type="radio"]{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
-
-.star:before {
-    content: '☆';
+.stars .star-box{
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 40px;
+    transition: all 0.2s ease;
+}
+.stars .star-box .star-icon{
+    height: 100%;
+    width: 200%;
+    pointer-events: none;
+    font-size: 30px;
     position: absolute;
+    top: 0;
+    color: grey;
+}
+.stars .star-box.left .star-icon {
+    clip-path: polygon(0 0, 42% 0, 42% 100%, 0% 100%);
+    z-index: 1;
     left: 0;
-    overflow: hidden;
-    width: 50%;
-    color: inherit;
 }
-
-.half {
-    display: inline-block;
-    position: absolute;
-    color: gold; /* Color for half-star */
-    width: 12px; /* Adjust width as needed */
-    overflow: hidden;
+.stars .star-box.right .star-icon {
+    right: 0;
 }
-
-.half::before {
-    content: '★'; /* Unicode for full star */
-    position: absolute;
+.stars .star-box.active .star-icon{
+    color: yellow;
+}
+.stars .star-box.hover:is(:hover, :has(~ :hover)) i {
+    color: #fffdba;
+}
+.form-stars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-stars .star-btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all .4s;
+    color: #343434;
+    border: 1px solid #343434;
+    background-color: white;
+}
+.form-stars .star-btn:hover {
+    background-color: #343434;
+    color: yellow;
+    border: 1px solid yellow;
+}
+.form-stars .stars {
+    margin-left: -10px;
 }
