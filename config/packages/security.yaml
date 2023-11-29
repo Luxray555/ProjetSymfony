@@ -43,6 +43,7 @@ security:
 
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/service-client, roles: [ROLE_SRVCLIENT,ROLE_ADMIN] }
         # - { path: ^/, roles: ROLE_USER }
 
 when@test:

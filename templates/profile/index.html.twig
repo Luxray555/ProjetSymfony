@@ -21,8 +21,10 @@
             </div>
         {% endif %}
             <div class="container">
-                    <div class="banner-content">
-                    <img src="{{ vich_uploader_asset(user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture">
+                <div class="banner-content">
+                    <div class="pfp-container">
+                        <img class="pfp" src="{{ vich_uploader_asset(user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture">
+                    </div>
                     <div class="user-info">
                         <h5>{{ user.getUsername() }}</h5>
                         <p>{{ user.bio }}</p>
