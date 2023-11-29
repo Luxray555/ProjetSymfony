@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Modification du systeme de note avec des étoiles et ajout des composants stars.html.twig et starsform.html.twig pour le formulaire de note et l'affichage des étoiles de note">
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification des warning (suppression des px inutile dans les fichiers css)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/anime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/anime.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/searchAnime.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/searchAnime.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="feature/page-anime-note" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -202,8 +202,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/page-anime-note&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -215,18 +215,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles\select2" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\scripts\select2" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\anime" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\banner" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\fonts" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\pp" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\anime\banner" />
     </key>
   </component>
   <component name="RunManager">
@@ -277,9 +277,7 @@
       <workItem from="1701176271114" duration="7147000" />
       <workItem from="1701183553165" duration="6330000" />
       <workItem from="1701190756350" duration="2992000" />
-      <workItem from="1701210086330" duration="1784000" />
-      <workItem from="1701211911412" duration="4185000" />
-      <workItem from="1701250973617" duration="4284000" />
+      <workItem from="1701277834275" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -425,15 +423,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701093053783</updated>
     </task>
-    <task id="LOCAL-00019" summary="Modification du systeme de note avec des étoiles et ajout des composants stars.html.twig et starsform.html.twig pour le formulaire de note et l'affichage des étoiles de note">
-      <option name="closed" value="true" />
-      <created>1701255298914</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1701255298914</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +458,6 @@
     <MESSAGE value="Modification date (d-m-Y) + bug slider accueil fix + max des dernière action de l'utilisateur 8-&gt;4" />
     <MESSAGE value="Creation de l'entité Genre" />
     <MESSAGE value="Ajout des pages d'erreurs" />
-    <MESSAGE value="Modification du systeme de note avec des étoiles et ajout des composants stars.html.twig et starsform.html.twig pour le formulaire de note et l'affichage des étoiles de note" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification du systeme de note avec des étoiles et ajout des composants stars.html.twig et starsform.html.twig pour le formulaire de note et l'affichage des étoiles de note" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des pages d'erreurs" />
   </component>
 </project>
