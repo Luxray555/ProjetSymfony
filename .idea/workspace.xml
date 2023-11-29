@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Ajout des genres et des status d'anime + modification de la page de recherche d'anime + ajout de la librairie twig component">
-      <change afterPath="$PROJECT_DIR$/public/scripts/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/component/components/stars.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/component/components/starsform.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_11_2023_20_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_11_2023_20_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/choicelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/choicelist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/searchAnime.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/searchAnime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/searchanime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/searchanime.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/searchuser.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/searchuser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SearchUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchUserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search/anime.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/anime.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search/user.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/user.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/anime.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/anime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/anime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/anime.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/stars.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/stars.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Note.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Note.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/NoteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NoteType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/NoteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NoteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,36 +211,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/search-user-update",
-    "last_opened_file_path": "C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/page-anime-note&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles\select2" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\scripts\select2" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\anime" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\banner" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\fonts" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\pp" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\anime\banner" />
     </key>
   </component>
   <component name="RunManager">
@@ -285,6 +291,9 @@
       <workItem from="1701176271114" duration="7147000" />
       <workItem from="1701183553165" duration="6330000" />
       <workItem from="1701190756350" duration="2992000" />
+      <workItem from="1701210086330" duration="1784000" />
+      <workItem from="1701211911412" duration="4185000" />
+      <workItem from="1701250973617" duration="4155000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />

@@ -8,6 +8,7 @@ use App\Entity\Note;
 use App\Form\CommentaireType;
 use App\Form\NoteType;
 use App\Repository\AnimeRepository;
+use App\Repository\NoteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AnimeController extends AbstractController
 {
     #[Route('/{id}', name: 'app_anime_show', methods: ['GET', 'POST'])]
-    public function index(Request $request, Anime $anime, AnimeRepository $animeRepository, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, Anime $anime, AnimeRepository $animeRepository, NoteRepository $noteRepository, EntityManagerInterface $entityManager): Response
     {
         $commentaire = new Commentaire();
         $commentaire->setAnime($anime);
@@ -35,16 +36,19 @@ class AnimeController extends AbstractController
         }
 
         $note = new Note();
-        $note->setAnime($anime);
-        $note->setUser($this->getUser());
+        $note->setDateCreation(new \DateTime());
         $form2 = $this->createForm(NoteType::class, $note);
         $form2->handleRequest($request);
 
         if ($form2->isSubmitted() && $form2->isValid()) {
-            $note->setDateCreation(new \DateTime());
-            $entityManager->persist($note);
+            $note->setAnime($anime);
+            $note->setUser($this->getUser());
+            if($animeRepository->isExist($note->getUser(), $note->getAnime())){
+               $noteRepository->updateNote($note, $note->getUser(), $note->getAnime());
+            }else{
+                $entityManager->persist($note);
+            }
             $entityManager->flush();
-
             return $this->redirectToRoute('app_anime_show', ['id'=>$anime->getId()], Response::HTTP_SEE_OTHER);
         }
 

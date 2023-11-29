@@ -125,8 +125,21 @@
 .interact .commentaire-form .exceeded-limit{
     color:red;
 }
+.interact .commentaire-form .comment-btn{
+    padding: 5px 10px;
+    transition: all .4s;
+    color: #343434;
+    border: 1px solid #343434;
+    background-color: white;
+}
+.interact .commentaire-form .comment-btn:hover {
+    border-radius: 5px;
+    background-color: #343434;
+    color: white;
+    border: 1px solid white;
+}
 
-.interact .commentaires-users{
+.interact .bloc-users{
     max-height: 400px;
     overflow: scroll;
     display: flex;
@@ -135,14 +148,7 @@
     margin-top: 10px;
 }
 
-.interact .notes-users{
-    max-height: 400px;
-    overflow: scroll;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-}
+
 
 @media screen and (max-width: 678px) {
     .cardAnime {

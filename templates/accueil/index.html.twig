@@ -52,21 +52,7 @@
                                         {% if action.note is defined %}
                                             <h5>Note</h5>
                                             <div class="note">
-                                                <div class="rating">
-                                                    {% set fullStars = action.note | round(0, 'floor') %} {# Get the integer part for full stars #}
-                                                    {% set hasHalfStar = action.note - fullStars >= 0.5 %}
-                                                    {% for i in range(1, 5) %}
-                                                        {% if i <= fullStars %}
-                                                            <span class="star">&#9733;</span>
-                                                        {% elseif hasHalfStar %}
-                                                            {% set hasHalfStar = false %}
-                                                            <span class="star half">&#9733;</span>
-                                                            <span class="star">&#9734;</span>
-                                                        {% else %}
-                                                            <span class="star">&#9734;</span>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
+                                                {{ component('stars', {note:action.note }) }}
                                                 <p class="date-heure">{{ action.dateCreation|date('d-m-Y H:i') }}</p>
                                             </div>
                                         {% else %}
