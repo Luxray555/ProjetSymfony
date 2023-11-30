@@ -22,6 +22,9 @@
       <change beforePath="$PROJECT_DIR$/templates/component/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/component/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html.twig" afterDir="false" />
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification des warning (suppression des px inutile dans les fichiers css)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/searchAnime.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/searchAnime.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="feature/page-anime-note" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -214,8 +217,22 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
@@ -269,6 +286,19 @@
       <workItem from="1700919859949" duration="1889000" />
       <workItem from="1701261339721" duration="636000" />
       <workItem from="1701276512415" duration="14480000" />
+      <workItem from="1700919859949" duration="3883000" />
+      <workItem from="1700925970085" duration="6000" />
+      <workItem from="1700942924064" duration="129000" />
+      <workItem from="1700950527074" duration="372000" />
+      <workItem from="1701090106494" duration="11540000" />
+      <workItem from="1701101726673" duration="5629000" />
+      <workItem from="1701107466219" duration="545000" />
+      <workItem from="1701120130423" duration="9646000" />
+      <workItem from="1701165677788" duration="10405000" />
+      <workItem from="1701176271114" duration="7147000" />
+      <workItem from="1701183553165" duration="6330000" />
+      <workItem from="1701190756350" duration="2992000" />
+      <workItem from="1701277834275" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />

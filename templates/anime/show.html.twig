@@ -29,12 +29,12 @@
                         {{ form_start(form1) }}
                         {{ form_widget(form1) }}
                         <div class="bottom">
-                            <button type="submit">Publier</button>
+                            <button type="submit" class="comment-btn" >Publier</button>
                             <span class="counter"><span class="character-count">0</span>/500</span>
                         </div>
                     {{ form_end(form1) }}
                     {% endif %}
-                    <div class="commentaires-users">
+                    <div class="bloc-users">
                         {% for commentaire in anime.commentaires | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
                             <div class="bloc commentaire">
                                 <div class="top">
@@ -55,11 +55,9 @@
                 <div class="notes">
                     <h2>Notes</h2>
                     {% if app.user %}
-                        {{ form_start(form2) }}
-                        {{ form_widget(form2) }}
-                        {{ form_end(form2) }}
+                        {{ component('starsform', {form:form2}) }}
                     {% endif %}
-                    <div class="notes-users">
+                    <div class="bloc-users notes-users">
                     {% for note in anime.notes | sort((a, b) => b.dateCreation <=> a.dateCreation) %}
                         <div class="bloc note">
                             <div class="top">
@@ -69,21 +67,7 @@
                                     <span class="time">{{ note.dateCreation | date('H:i:s') }}</span>
                                 </span>
                             </div>
-                            <div class="rating">
-                                {% set fullStars = note.note | round(0, 'floor') %} {# Get the integer part for full stars #}
-                                {% set hasHalfStar = note.note - fullStars >= 0.5 %}
-                                {% for i in range(1, 5) %}
-                                    {% if i <= fullStars %}
-                                        <span class="star">&#9733;</span>
-                                    {% elseif hasHalfStar %}
-                                        {% set hasHalfStar = false %}
-                                        <span class="star half">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                    {% else %}
-                                        <span class="star">&#9734;</span>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
+                            {{ component('stars', {note:note.note}) }}
                         </div>
                     {% else %}
                         <p>Aucune Note</p>

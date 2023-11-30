@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Anime;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -73,6 +74,22 @@ class AnimeRepository extends ServiceEntityRepository
         $queryBuilder->orderBy('a.nom', 'ASC');
 
         return $queryBuilder->getQuery()->getResult();
+    }
+
+    public function isExist(User $user, Anime $anime): bool
+    {
+        $queryBuilder = $this->createQueryBuilder('a');
+
+        $result = $queryBuilder
+            ->leftJoin('a.notes', 'n')
+            ->andWhere('n.user = :user')
+            ->setParameter('user', $user)
+            ->andWhere('a = :anime')
+            ->setParameter('anime', $anime)
+            ->getQuery()
+            ->getResult();
+
+        return !empty($result);
     }
 
 //    public function findOneBySomeField($value): ?Anime

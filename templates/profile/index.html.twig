@@ -43,21 +43,7 @@
                             <img class="cover" src="{{ vich_uploader_asset(note.anime, "coverImageFile") }}" alt="Note Image">
                         </a>
                         <h3>{{ note.anime.nom|length > 20 ? note.anime.nom|slice(0, 20) ~ '...' : note.anime.nom }}</h3>
-                        <div class="rating">
-                            {% set fullStars = note.note | round(0, 'floor') %} {# Get the integer part for full stars #}
-                            {% set hasHalfStar = note.note - fullStars >= 0.5 %}
-                            {% for i in range(1, 5) %}
-                                {% if i <= fullStars %}
-                                    <span class="star">&#9733;</span>
-                                {% elseif hasHalfStar %}
-                                    {% set hasHalfStar = false %}
-                                    <span class="star half">&#9733;</span>
-                                    <span class="star">&#9734;</span>
-                                {% else %}
-                                    <span class="star">&#9734;</span>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
+                        {{ component('stars', {note:note.note}) }}
                     </div>
                 {% else %}
                     <p>Vous n'avez pas encore mis de notes 😢</p>
