@@ -1,5 +1,5 @@
-{% block javascripts %}
-    <script src="https://cdn.tailwindcss.com"></script>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/header.css') }}">
 {% endblock %}
 
 <nav class="nav bg-dark d-flex flex-row align-items-center px-3 flex-nowrap position-relative">
@@ -28,10 +28,8 @@
                     <img src="{{ app.user.avatar ? vich_uploader_asset(app.user.avatar, 'ppImageFile') : asset('/images/user/pp/default.png') }}" alt="Profile picture">
                 </a>
                 {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
-                    <div class="nav-element nav-image nav-element-drop">
-                        <div class="img-header">
-                            <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
-                        </div>
+                    <div class="nav-element nav-element-drop">
+                        <img class="dropdown-toggle nav-pfp" src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
                         <ul class="dropdown-a">
                             <a class="dropdown-b" href="{{ path('app_profile',{'id': app.user.id}) }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">Profil</li></a>
                             {% if (is_granted('ROLE_ADMIN')) %}
