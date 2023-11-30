@@ -1,0 +1,205 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 300px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+form {
+    padding: 15px 20px;
+    width: 100%;
+    min-width: 25rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+.fichier-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.fichier-selection p {
+    padding: 0 5px;
+    align-self: end;
+    margin-bottom: 0;
+}
+
+.pp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.pp label {
+    align-self: start;
+
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 4px 4px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+    margin-top: 0.5rem;
+}
+
+.pp label:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 2rem
+}
+
+.banner label {
+    align-self: start;
+
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 4px 4px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+    margin-top: 0.5rem;
+}
+
+.banner label:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+.vich-image {
+    display: flex;
+    flex-direction: row;
+}
+
+.vich-image input {
+    display: none;
+}
+
+.vich-image a{
+    height: 5rem;
+    display: block;
+}
+
+.vich-image img {
+    height: 100%;
+}
+
+/* Not image Field */
+
+.username .widget {
+    padding-left: 20px;
+}
+
+.username input {
+
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.bio .widget {
+    padding-left: 20px;
+}
+
+.bio textarea {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #0c4a6e;
+    border-radius: 4px;
+    resize: none;
+    height: 5rem;
+}
+
+
+.submit {
+    align-self: end;
+
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 4px 4px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+    margin-top: 0.5rem;
+}
+
+.submit:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .settings-container {
+        padding: 20px 200px;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .settings-container {
+        padding: 20px 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .settings-container {
+        padding: 20px 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .settings-container {
+        padding: 20px 20px;
+    }
+
+    form {
+        min-width: 20rem;
+    }
+}
+
