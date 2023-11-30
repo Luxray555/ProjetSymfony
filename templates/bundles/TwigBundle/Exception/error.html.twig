@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur interne du serveur{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/error.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-error">
+        <div class="error">
+            <h1>{{ status_code }} - Erreur interne du serveur</h1>
+            <p>Une erreur interne du serveur s'est produite. Nous travaillons à résoudre le problème.</p>
+            <a href="/">Retour à la page d'accueil</a>
+        </div>
+    </div>
+{% endblock %}

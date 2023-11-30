@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Anime;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -39,7 +40,6 @@ class AnimeRepository extends ServiceEntityRepository
      */
     public function findTrendingAnime(): array
     {
-        // Temporaire
         return $this->createQueryBuilder('a')
             ->orderBy('a.id', 'ASC')
             ->setMaxResults(4)
@@ -48,16 +48,48 @@ class AnimeRepository extends ServiceEntityRepository
             ;
     }
 
-    public function search(?string $nom): array
+    public function search(?string $nom, ?array $genres, ?array $status): array
     {
-        if (empty($nom)) {
-            return $this->findAll();
+        $queryBuilder = $this->createQueryBuilder('a');
+
+        if (!empty($nom)) {
+            $queryBuilder->andWhere('a.nom LIKE :nom')
+                ->setParameter('nom', '%' . $nom . '%');
         }
-        return $this->createQueryBuilder('a')
-            ->where('a.nom LIKE :nom')
-            ->setParameter('nom', '%' . $nom . '%')
+
+        if ($genres !== [""]) {
+            $queryBuilder
+                ->leftJoin('a.genres', 'g')
+                ->andWhere('g.nom IN (:genres)')
+                ->setParameter('genres', $genres);
+        }
+
+        if ($status !== [""]) {
+            $queryBuilder
+                ->leftJoin('a.status', 's')
+                ->andWhere('s.nom IN (:status)')
+                ->setParameter('status', $status);
+        }
+
+        $queryBuilder->orderBy('a.nom', 'ASC');
+
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+    public function isExist(User $user, Anime $anime): bool
+    {
+        $queryBuilder = $this->createQueryBuilder('a');
+
+        $result = $queryBuilder
+            ->leftJoin('a.notes', 'n')
+            ->andWhere('n.user = :user')
+            ->setParameter('user', $user)
+            ->andWhere('a = :anime')
+            ->setParameter('anime', $anime)
             ->getQuery()
             ->getResult();
+
+        return !empty($result);
     }
 
 //    public function findOneBySomeField($value): ?Anime

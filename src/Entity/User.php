@@ -56,11 +56,17 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
     #[ORM\JoinColumn(nullable: true)]
     #[Ignore]
     private ?Avatar $avatar = null;
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: ReponseTicket::class)]
+    private Collection $reponseTickets;
+
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Ticket::class)]
+    private Collection $tickets;
 
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
         $this->notes = new ArrayCollection();
+        $this->reponseTickets = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -242,11 +248,23 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
     public function setAvatar(?Avatar $avatar): static
     {
         $this->avatar = $avatar;
+    /**
+     * @return Collection<int, ReponseTicket>
+     */
+    public function getReponseTickets(): Collection
+    {
+        return $this->reponseTickets;
+    }
+
+    public function addReponseTicket(ReponseTicket $reponseTicket): static
+    {
+        if (!$this->reponseTickets->contains($reponseTicket)) {
+            $this->reponseTickets->add($reponseTicket);
+            $reponseTicket->setAuteur($this);
+        }
 
         return $this;
     }
-
-
 
     public function serialize()
     {
@@ -270,5 +288,15 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
             $this->roles,
             $this->isVerified,
         ] = unserialize($data, ['allowed_classes' => false]);
+    public function removeReponseTicket(ReponseTicket $reponseTicket): static
+    {
+        if ($this->reponseTickets->removeElement($reponseTicket)) {
+            // set the owning side to null (unless already changed)
+            if ($reponseTicket->getAuteur() === $this) {
+                $reponseTicket->setAuteur(null);
+            }
+        }
+
+        return $this;
     }
 }

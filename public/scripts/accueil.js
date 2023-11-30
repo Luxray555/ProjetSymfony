@@ -1,25 +1,36 @@
-let listBtn = document.querySelectorAll('.dot-btn button');
-let listSlide = document.querySelectorAll('.carte-column');
-let pos = 0;
+function initializeSlider(buttonsSelector, slidesSelector) {
+    const buttons = document.querySelectorAll(buttonsSelector);
+    const slides = document.querySelectorAll(slidesSelector);
+    let position = 0;
+    let interval;
 
-let change = (i) => {
-    listBtn[pos].classList.remove('active');
-    listSlide[pos].classList.remove('active');
-    pos = i;
-    listBtn[pos].classList.add('active');
-    listSlide[pos].classList.add('active');
-}
+    function changeSlide(i) {
+        buttons[position].classList.remove('active');
+        slides[position].classList.remove('active');
 
-let intervalActivite = setInterval(() => {
-    change((pos + 1) % listBtn.length);
-}, 10000);
+        position = i;
 
-for (let i = 0; i < listBtn.length; i++) {
-    listBtn[i].addEventListener('click', () => {
-        clearInterval(intervalActivite);
-        change(i);
-        intervalActivite = setInterval(() => {
-            change((pos + 1) % listBtn.length);
+        buttons[position].classList.add('active');
+        slides[position].classList.add('active');
+    }
+
+    function startInterval() {
+        interval = setInterval(() => {
+            changeSlide((position + 1) % slides.length);
         }, 10000);
+    }
+
+    startInterval();
+
+    buttons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+            clearInterval(interval);
+            changeSlide(i);
+            startInterval();
+        });
     });
 }
+
+initializeSlider('.activite .dot-btn button', '.carte-column');
+initializeSlider('.anime-new .dot-btn button', '.anime-new .new');
+

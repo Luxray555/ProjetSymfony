@@ -3,7 +3,26 @@
 {% block title %}Recherche Anime{% endblock %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/search.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/searchanime.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/pagination.css') }}">
+{% endblock %}
+{% block javascripts %}
+    <script>
+        var app = {
+            request: {
+                get: function (param) {
+                    let array = [];
+                    array[0] = "{{ app.request.get('genres') }}".split(',');
+                    array[1] = "{{ app.request.get('status') }}".split(',');
+                    return array;
+                }
+            }
+        };
+    </script>
+    <script src="{{ asset('scripts/search.js') }}"></script>
+    <script src="{{ asset('scripts/searchanime.js') }}"></script>
+    <script src="{{ asset('scripts/choicelist.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -11,38 +30,53 @@
         <h1>Recherche Anime</h1>
 
         {{ form_start(form1) }}
-        {{ form_row(form1.search) }}
-        <i class="search-icon fas fa-search"></i>
+        <div class="search-line">
+            <div class="search">
+                {{ form_row(form1.search, {'value':app.request.get('search')}) }}
+                <i class="search-icon fas fa-search"></i>
+                <button type="button" class="filter-btn">
+                    <i class="arrow-icon fas fa-caret-down"></i>
+                </button>
+            </div>
+            {{ form_row(form1.submit) }}
+        </div>
+        <div class="filter">
+            {{ component('choicelist', {title:"genres", list: form1.genres}) }}
+            {{ component('choicelist', {title:"status", list: form1.status}) }}
+        </div>
         {{ form_end(form1) }}
         <div class="container-block">
-            <div class="container-animes">
-                {% for anime in animes %}
-                    <a class="anime" href="{{ path('app_anime_show', {'id': anime.id}) }}">
-                        <div class="banner">
-                            <img src="{{ vich_uploader_asset(anime, 'bannerImageFile')}}" alt="banner">
-                        </div>
-                        <div class="top">
-                            <div class="cover">
-                                <img src="{{ vich_uploader_asset(anime, 'coverImageFile')}}" alt="cover">
+            {% if animes is not empty %}
+                <div class="container-animes">
+                    {% for anime in animes %}
+                        <a class="anime" href="{{ path('app_anime_show', {'id': anime.id}) }}">
+                            <div class="banner">
+                                <img src="{{ vich_uploader_asset(anime, 'bannerImageFile') }}" alt="banner">
                             </div>
-                            <h3>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h3>
-                        </div>
-                        <div class="info">
-                            <h6>Synopsis</h6>
-                            <p>
-                                {% if anime.synopsis %}
-                                    {{ anime.synopsis | slice(0, 70) }}...
-                                {% else %}
-                                    Aucun synopsis
-                                {% endif %}
-                            </p>
-                        </div>
-                    </a>
-                {% else %}
-                    <p>Aucun anime trouvé</p>
-                {% endfor %}
-
-            </div>
+                            <div class="top">
+                                <div class="cover">
+                                    <img src="{{ vich_uploader_asset(anime, 'coverImageFile') }}" alt="cover">
+                                </div>
+                                <h3>{{ anime.nom | length > 20 ? anime.nom | slice(0, 20) ~ "..." : anime.nom }}</h3>
+                            </div>
+                            <div class="info">
+                                <h6>Synopsis</h6>
+                                <p>
+                                    {% if anime.synopsis %}
+                                        {{ anime.synopsis | slice(0, 70) }}...
+                                    {% else %}
+                                        Aucun synopsis
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="not-found-container">
+                    <p class="not-found">Aucun anime trouvé</p>
+                </div>
+            {% endif %}
             <nav class="pagination">
                 {{ knp_pagination_render(animes) }}
             </nav>

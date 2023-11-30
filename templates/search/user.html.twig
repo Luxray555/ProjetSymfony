@@ -3,15 +3,26 @@
 {% block title %}Recherche Utilisateur{% endblock %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/search.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/searchuser.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/pagination.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('scripts/search.js') }}"></script>
 {% endblock %}
 
 {% block body %}
     <div class="bloc">
         <h1>Recherche Utilisateur</h1>
-
         {{ form_start(form1) }}
-        {{ form_row(form1.search) }}
+        <div class="search-line">
+            <div class="search">
+                {{ form_row(form1.search, {'value':app.request.get('search')}) }}
+                <i class="search-icon fas fa-search"></i>
+            </div>
+            {{ form_row(form1.submit) }}
+        </div>
         {{ form_end(form1) }}
         <div class="container-block">
             <div class="container-users">

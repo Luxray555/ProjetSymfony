@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20231118202858 extends AbstractMigration
+final class Version20231127144458 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,12 +20,14 @@ final class Version20231118202858 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE commentaire CHANGE commentaire commentaire LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE anime ADD CONSTRAINT FK_130459426BF700BD FOREIGN KEY (status_id) REFERENCES anime_status (id)');
+        $this->addSql('CREATE INDEX IDX_130459426BF700BD ON anime (status_id)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE commentaire CHANGE commentaire commentaire VARCHAR(500) NOT NULL');
+        $this->addSql('ALTER TABLE anime DROP FOREIGN KEY FK_130459426BF700BD');
+        $this->addSql('DROP INDEX IDX_130459426BF700BD ON anime');
     }
 }

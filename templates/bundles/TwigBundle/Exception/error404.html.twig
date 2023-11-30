@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/error.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-error">
+        <div class="error">
+            <h1>404 - Page non trouvée</h1>
+            <p>La page que vous recherchez n'a pas été trouvée.</p>
+            <a href="/">Retour à la page d'accueil</a>
+        </div>
+    </div>
+{% endblock %}
