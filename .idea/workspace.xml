@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification des warning (suppression des px inutile dans les fichiers css)">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/body.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/body.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/error.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/error.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/component/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/component/components/choicelist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/components/choicelist.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search/anime.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/anime.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,22 +199,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/header-fix-pp",
-    "last_opened_file_path": "C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles\select2" />
@@ -286,6 +281,7 @@
       <workItem from="1701190756350" duration="2992000" />
       <workItem from="1701277834275" duration="258000" />
       <workItem from="1701292996207" duration="1857000" />
+      <workItem from="1701346359435" duration="1165000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -466,6 +462,7 @@
     <MESSAGE value="Modification date (d-m-Y) + bug slider accueil fix + max des dernière action de l'utilisateur 8-&gt;4" />
     <MESSAGE value="Creation de l'entité Genre" />
     <MESSAGE value="Ajout des pages d'erreurs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des pages d'erreurs" />
+    <MESSAGE value="Modification du header + de la police d'écriture à l'accueil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification du header + de la police d'écriture à l'accueil" />
   </component>
 </project>
