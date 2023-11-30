@@ -21,7 +21,7 @@
         <div class="rightsec d-flex flex-row gap-2">
             {% if app.user %}
                 <a class="nav-element nav-profil d-flex flex-row {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}" href="{{ path('app_profile',{'id': app.user.id}) }}">
-                    <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture">
+                    <img src="{{ app.user.avatar ? vich_uploader_asset(app.user.avatar, 'ppImageFile') : asset('/images/user/pp/default.png') }}" alt="Profile picture">
                 </a>
                 <a class="nav-element logout" href="{{ path('app_logout') }}">Deconnexion</a>
             {% else %}

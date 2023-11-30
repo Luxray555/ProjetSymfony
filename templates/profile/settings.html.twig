@@ -2,10 +2,55 @@
 
 {% block title %}Settings{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/profilesettings.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ asset('scripts/profilesettings.js') }}"></script>
+{% endblock %}
+
 {% block body %}
-    <h1>Settings</h1>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Save</button>
-    {{ form_end(form) }}
+    <div class="settings-container">
+        <h1>User settings</h1>
+        {{ form_start(form) }}
+
+        <div class="pp field">
+            <div class="img-widget" >
+                {{ form_widget(form.avatar.ppImageFile) }}
+            </div>
+            <div class="fichier-selection">
+                {{ form_label(form.avatar.ppImageFile) }}
+                <p id="pp-text-file"></p>
+            </div>
+        </div>
+
+        <div class="banner field">
+            <div class="img-widget" >
+                {{ form_widget(form.avatar.bannerImageFile) }}
+            </div>
+            <div class="fichier-selection">
+                {{ form_label(form.avatar.bannerImageFile) }}
+                <p id="banner-text-file"></p>
+            </div>
+        </div>
+
+        <div class="username field">
+            {{ form_label(form.username) }}
+            <div class="widget">
+                {{ form_widget(form.username) }}
+            </div>
+        </div>
+
+        <div class="bio field">
+            {{ form_label(form.bio) }}
+            <div class="widget">
+                {{ form_widget(form.bio) }}
+            </div>
+        </div>
+
+        <button class="submit" type="submit">Save</button>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

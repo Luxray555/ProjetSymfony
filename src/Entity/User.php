@@ -6,17 +6,19 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Serializable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Ignore;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 #[Vich\Uploadable]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements Serializable, UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -38,27 +40,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[Vich\UploadableField(mapping: 'pp_user', fileNameProperty: 'ppImageName', size: 'ppImageSize')]
-    private ?File $ppImageFile = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?string $ppImageName = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $ppImageSize = null;
-
-    #[Vich\UploadableField(mapping: 'banner_user', fileNameProperty: 'bannerImageName', size: 'bannerImageSize')]
-    private ?File $bannerImageFile = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?string $bannerImageName = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $bannerImageSize = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $updatedAt = null;
-
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $bio = null;
 
@@ -70,6 +51,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Note::class)]
     private Collection $notes;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: true)]
+    #[Ignore]
+    private ?Avatar $avatar = null;
 
     public function __construct()
     {
@@ -150,78 +136,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    public function getPpImageName(): ?string
-    {
-        return $this->ppImageName;
-    }
-
-    public function setPpImageName(?string $ppImageName): void
-    {
-        $this->ppImageName = $ppImageName;
-    }
-
-    public function getPpImageSize(): ?int
-    {
-        return $this->ppImageSize;
-    }
-
-    public function setPpImageSize(?int $ppImageSize): void
-    {
-        $this->ppImageSize = $ppImageSize;
-    }
-
-    public function getBannerImageName(): ?string
-    {
-        return $this->bannerImageName;
-    }
-
-    public function setBannerImageName(?string $bannerImageName): void
-    {
-        $this->bannerImageName = $bannerImageName;
-    }
-
-    public function getBannerImageSize(): ?int
-    {
-        return $this->bannerImageSize;
-    }
-
-    public function setBannerImageSize(?int $bannerImageSize): void
-    {
-        $this->bannerImageSize = $bannerImageSize;
-    }
-
-    public function getPpImageFile(): ?File
-    {
-        return $this->ppImageFile;
-    }
-
-    public function setPpImageFile(?File $ppImageFile = null): void
-    {
-        $this->ppImageFile = $ppImageFile;
-
-        if (null !== $ppImageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
-    }
-
-    public function getBannerImageFile(): ?File
-    {
-        return $this->bannerImageFile;
-    }
-
-    public function setBannerImageFile(?File $bannerImageFile = null): void
-    {
-        $this->bannerImageFile = $bannerImageFile;
-
-        if (null !== $bannerImageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
     }
 
     public function getBio(): ?string
@@ -318,5 +232,43 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    public function getAvatar(): ?Avatar
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(?Avatar $avatar): static
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+
+
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->email,
+            $this->username,
+            $this->password,
+            $this->roles,
+            $this->isVerified,
+        ]);
+    }
+
+    public function unserialize(string $data)
+    {
+        [
+            $this->id,
+            $this->email,
+            $this->username,
+            $this->password,
+            $this->roles,
+            $this->isVerified,
+        ] = unserialize($data, ['allowed_classes' => false]);
     }
 }

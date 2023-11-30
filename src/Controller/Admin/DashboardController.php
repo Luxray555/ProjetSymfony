@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Anime;
+use App\Entity\Avatar;
 use App\Entity\Commentaire;
 use App\Entity\Note;
 use App\Entity\User;
@@ -49,5 +50,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Animes', 'fas fa-film', Anime::class);
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('Notes', 'fas fa-star', Note::class);
+        yield MenuItem::linkToCrud('Avatars', 'fas fa-user-circle', Avatar::class);
     }
 }
