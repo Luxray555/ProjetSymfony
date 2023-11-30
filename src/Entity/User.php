@@ -248,6 +248,8 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
     public function setAvatar(?Avatar $avatar): static
     {
         $this->avatar = $avatar;
+        return $this;
+    }
     /**
      * @return Collection<int, ReponseTicket>
      */
@@ -288,6 +290,9 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
             $this->roles,
             $this->isVerified,
         ] = unserialize($data, ['allowed_classes' => false]);
+
+    }
+
     public function removeReponseTicket(ReponseTicket $reponseTicket): static
     {
         if ($this->reponseTickets->removeElement($reponseTicket)) {
