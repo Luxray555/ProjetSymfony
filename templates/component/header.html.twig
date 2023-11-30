@@ -24,9 +24,6 @@
         </div>
         <div class="rightsec d-flex flex-row gap-2">
             {% if app.user %}
-                <a class="nav-element nav-profil d-flex flex-row {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}" href="{{ path('app_profile',{'id': app.user.id}) }}">
-                    <img src="{{ app.user.avatar ? vich_uploader_asset(app.user.avatar, 'ppImageFile') : asset('/images/user/pp/default.png') }}" alt="Profile picture">
-                </a>
                 {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
                     <div class="nav-element nav-element-drop">
                         <img class="dropdown-toggle nav-pfp" src="{{ vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
@@ -41,7 +38,7 @@
                 {% else %}
                     <a class="nav-element" role="button" href="{{ path('app_profile',{'id': app.user.id}) }}">
                         <div class="img-header">
-                            <img src="{{ vich_uploader_asset(app.user, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                            <img src="{{ app.user.avatar ? (vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png'))) : asset('/images/user/pp/default.png') }}" alt="Profile picture" />
                         </div>
                     </a>
                 {% endif %}
