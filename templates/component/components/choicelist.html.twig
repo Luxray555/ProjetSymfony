@@ -8,7 +8,6 @@
         <div class="choice-box">
             {% for child in list %}
                 <div class="line {{ title[:-1] | lower }}">
-                    {% set isChecked = app.request.get(title) is not null and child.vars.label in app.request.get(title) %}
                     {{ form_widget(child) }}
                     {{ form_label(child) }}
                     <i class="cross-icon fas fa-times"></i>

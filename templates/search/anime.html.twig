@@ -41,8 +41,8 @@
             {{ form_row(form1.submit) }}
         </div>
         <div class="filter">
-            {{ component('choicelist', {title:"genres", list: form1.genres, checked:app.request.get('genres')}) }}
-            {{ component('choicelist', {title:"status", list: form1.status, checked:app.request.get('genres')}) }}
+            {{ component('choicelist', {title:"genres", list: form1.genres}) }}
+            {{ component('choicelist', {title:"status", list: form1.status}) }}
         </div>
         {{ form_end(form1) }}
         <div class="container-block">

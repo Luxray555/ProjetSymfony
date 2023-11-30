@@ -85,9 +85,12 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    padding: 0 0 30px 0;
 }
 .container-a h2{
+    font-size: 40px;
     text-align: center;
+    font-family: ArchivoBlack;
 }
 .sec1{
     display: flex;
