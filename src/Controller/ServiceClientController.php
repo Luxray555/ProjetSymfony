@@ -12,6 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ServiceClientController extends AbstractController
@@ -71,7 +73,7 @@ class ServiceClientController extends AbstractController
     }
 
     #[Route('/tickets/{id}', name: 'app_ticket_show', methods: ['GET', 'POST'])]
-    public function show(Ticket $ticket, Request $request, EntityManagerInterface $entityManager): Response
+    public function show(Ticket $ticket, Request $request, EntityManagerInterface $entityManager, MailerInterface $mailer): Response
     {
         $user = $this->security->getUser();
 
@@ -86,6 +88,14 @@ class ServiceClientController extends AbstractController
 
             $entityManager->persist($reponse);
             $entityManager->flush();
+
+            $email = (new Email())
+                ->from('no-reply@oxyjen.io')
+                ->to($ticket->getAuteur()->getEmail())
+                ->subject('Nouvelle réponse sur votre ticket.')
+                ->text($user->getUsername() . ' a répondu à votre ticket.');
+
+            $mailer->send($email);
 
             $reponse = new ReponseTicket();
             $form = $this->createForm(ReponseType::class, $reponse);
@@ -114,11 +124,21 @@ class ServiceClientController extends AbstractController
     }
 
     #[Route('/service-client/{id}/modify-status', name: 'app_ticket_status', methods: ['GET'])]
-    public function close(Ticket $ticket, EntityManagerInterface $entityManager): Response
+    public function close(Ticket $ticket, EntityManagerInterface $entityManager, MailerInterface $mailer): Response
     {
-        $ticket->setOuvert(!$ticket->isOuvert());
+        $newStatus = !$ticket->isOuvert();
+
+        $ticket->setOuvert($newStatus);
         $entityManager->persist($ticket);
         $entityManager->flush();
+
+        $email = (new Email())
+            ->from('no-reply@oxyjen.io')
+            ->to($ticket->getAuteur()->getEmail())
+            ->subject('Votre ticket a été ' . ($newStatus ? 'ouvert' : 'fermé') .'.')
+            ->text('Votre ticket ' . $ticket->getTitre() . ' a été ' . ($newStatus ? 'ouvert' : 'fermé'));
+
+        $mailer->send($email);
 
         return $this->redirectToRoute('app_ticket_index', [], Response::HTTP_SEE_OTHER);
     }
