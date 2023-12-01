@@ -26,11 +26,12 @@
 }
 .stars .star-box.left .star-icon {
     clip-path: polygon(0 0, 42% 0, 42% 100%, 0% 100%);
-    z-index: 1;
+    z-index: 3;
     left: 0;
 }
 .stars .star-box.right .star-icon {
     right: 0;
+    z-index: 1;
 }
 .stars .star-box.active .star-icon{
     color: yellow;

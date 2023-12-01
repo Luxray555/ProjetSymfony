@@ -26,7 +26,9 @@
             {% if app.user %}
                 {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
                     <div class="nav-element nav-element-drop">
-                        <img class="dropdown-toggle nav-pfp" src="{{ vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                        <div class="dropdown-toggle img-header">
+                            <img src="{{ vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                        </div>
                         <ul class="dropdown-a">
                             <a class="dropdown-b" href="{{ path('app_profile',{'id': app.user.id}) }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">Profil</li></a>
                             {% if (is_granted('ROLE_ADMIN')) %}
