@@ -36,9 +36,10 @@
 .stars .star-box.active .star-icon{
     color: yellow;
 }
-.stars .star-box.hover:is(:hover, :has(~ :hover)) i {
-    color: #fffdba;
+.stars .star-box.hover.on .star-icon{
+    color: #9a9a00;
 }
+
 .form-stars {
     display: flex;
     flex-direction: column;

@@ -25,7 +25,7 @@
         <div class="rightsec d-flex flex-row gap-2">
             {% if app.user %}
                 {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
-                    <div class="nav-element nav-element-drop">
+                    <div class="nav-element nav-image nav-element-drop">
                         <div class="dropdown-toggle img-header">
                             <img src="{{ vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
                         </div>

@@ -99,13 +99,8 @@
     border-radius: 100%;
 }
 
-.nav-image{
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    padding: 5px;
+.nav-element.nav-image{
+    padding: 6px 15px;
 }
 .nav-element .img-header{
     width: 35px;
