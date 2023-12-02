@@ -300,4 +300,5 @@ class Anime
 
         return $this;
     }
+
 }

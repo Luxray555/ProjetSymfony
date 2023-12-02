@@ -26,29 +26,57 @@ svg {
     flex-direction: row;
     align-items: end;
     height: 100%;
+    margin-top: -100px;
 }
 
-.banner-content {
+.container .banner-content {
     display: flex;
     flex-direction: row;
-    align-items: start;
     width: 100%;
+    gap: 30px;
+    transition: all .4s;
+}
+.container .banner-content .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+    width: 100%;
+    color: white;
+}
+.container .banner-content .user-info h2{
+    margin: 0;
+}
+.container .banner-content .user-info .bio{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px 0 0 0;
+    border: solid 1px #373737;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all .4s;
+}
+.container .banner-content .user-info .bio h5{
+    color: #373737;
+    margin: 0;
+}
+.container .banner-content .user-info .bio p{
+    color: #373737;
+    margin: 0 10px 0 10px;
+    height: 200px;
+}
+.container .banner-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: white solid 5px;
 }
 
 .pfp {
     aspect-ratio: 1/1;
     width: 250px;
-}
-
-.user-info {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 15px 20px;
-}
-
-.user-info p {
-    padding-left: 20px;
 }
 
 .settings {
@@ -63,28 +91,22 @@ svg {
 
 @media screen and (max-width: 678px) {
 
-    .banner {
-        height: auto;
+    .container{
+        margin-top: -225px;
     }
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .banner-content {
+    .container .banner-content{
         flex-direction: column;
         align-items: center;
+        gap: 40px;
+    }
+    .container .banner-content h2{
+        color: #373737;
+        text-align: center ;
+    }
+    .container .banner-content .user-info{
+        margin-top: 0;
     }
 
-    .user-info {
-        align-items: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .user-info p {
-        padding-left: 0;
-    }
 }
 
 .content {

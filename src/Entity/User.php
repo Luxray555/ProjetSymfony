@@ -64,6 +64,7 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
 
     public function __construct()
     {
+        $this->avatar = new Avatar();
         $this->commentaires = new ArrayCollection();
         $this->notes = new ArrayCollection();
         $this->reponseTickets = new ArrayCollection();

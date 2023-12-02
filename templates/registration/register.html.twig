@@ -10,28 +10,20 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-        {{ form_errors(registrationForm) }}
+    {{ form_errors(registrationForm) }}
 
-        {{ form_start(registrationForm) }}
-            <div class="register-container">
-                <h1>Créez votre compte</h1>
-                <a href="{{ path('app_login') }}">Vous avez déjà un compte? Cliquez ici pour vous connecter!</a>
-                {{ form_row(registrationForm.email, {
-                    'attr': {'class': 'form-control'}
-                }) }}
-                {{ form_row(registrationForm.username, {
-                    label: 'Nom d\'utilisateur',
-                    'attr': {'class': 'form-control'}
-                }) }}
-                {{ form_row(registrationForm.plainPassword, {
-                    label: 'Mot de passe',
-                    'attr': {'class': 'form-control'}
-                }) }}
-                {{ form_row(registrationForm.agreeTerms, {
-                    label: 'Accepter notre CGU'
-                }) }}
-
-                <button type="submit" class="btn">S'inscrire</button>
-            </div>
-        {{ form_end(registrationForm) }}
+    {{ form_start(registrationForm) }}
+    <div class="register-container">
+        <img class="mascotte" src="{{ asset('images/mascotte/mascotte.png') }}" alt="Mascotte">
+        <h1>Créez votre compte</h1>
+        <a href="{{ path('app_login') }}">Vous avez déjà un compte? Cliquez ici pour vous connecter!</a>
+        {% for formRow in registrationForm %}
+            {% if formRow.vars.name != "_token" %}
+                {{ form_label(formRow) }}
+                {{ form_widget(formRow) }}
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn">S'inscrire</button>
+    </div>
+    {{ form_end(registrationForm) }}
 {% endblock %}

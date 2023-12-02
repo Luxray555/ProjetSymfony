@@ -17,8 +17,8 @@
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
-
     <div class="login-container">
+        <img class="mascotte" src="{{ asset('images/mascotte/mascotte.png') }}" alt="Mascotte">
         <h1 class="h3 mb-3 font-weight-normal">Connectez vous à votre compte</h1>
         <a href="{{ path('app_register') }}">Vous n'avez pas encore de compte? Cliquez ici pour en créer un!</a>
         <label for="inputEmail">Email</label>
