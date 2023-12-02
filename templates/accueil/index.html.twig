@@ -44,9 +44,11 @@
                     <div class="anime-activite">
                         <div class="column-a">
                             {% for key, action in lastActions %}
-                                <a class="carte-column {{ key==0 ? "active" : "" }}" href="{{ path('app_anime_show', {'id' : action.anime.id}) }}">
-                                    <div class="img" >
-                                        <img src="{{ vich_uploader_asset(action.anime, 'coverImageFile') }}" alt="{{ action.anime.nom }}">
+                                <a class="carte-column {{ key==0 ? "active" : "" }}"
+                                   href="{{ path('app_anime_show', {'id' : action.anime.id}) }}">
+                                    <div class="img">
+                                        <img src="{{ vich_uploader_asset(action.anime, 'coverImageFile') }}"
+                                             alt="{{ action.anime.nom }}">
                                     </div>
                                     <div class="info">
                                         {% if action.note is defined %}
@@ -59,28 +61,32 @@
                                             <h5>Commentaire</h5>
                                             <div class="commentaire">
                                                 {% if action.commentaire|length > 40 %}
-                                                    <p>{{ action.commentaire[:40] ~ '...'}}</p>
+                                                    <p>{{ action.commentaire[:40] ~ '...' }}</p>
                                                 {% else %}
-                                                    <p>{{ action.commentaire}}</p>
+                                                    <p>{{ action.commentaire }}</p>
                                                 {% endif %}
                                                 <p class="">{{ action.dateCreation|date('d-m-Y H:i') }}</p>
                                             </div>
                                         {% endif %}
                                     </div>
                                 </a>
+                            {% else %}
+                                <p class="aucune-activite">Aucune activité</p>
                             {% endfor %}
                         </div>
                         <div class="dot-btn">
-                            {% for i in range (1, lastActions | length) %}
-                                <button class="{{ i==1 ? "active" : "" }}"></button>
-                            {% endfor %}
+                            {% if lastActions | length > 0 %}
+                                {% for i in range (1, lastActions | length) %}
+                                    <button class="{{ i==1 ? "active" : "" }}"></button>
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
         {% endif %}
         <div class="anime-une">
-           <div class="container-a">
+            <div class="container-a">
                 <h2>Anime en tendance</h2>
                 <div class="row-b">
                     <div class="row-a">

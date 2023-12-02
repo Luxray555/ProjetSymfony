@@ -28,6 +28,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .nav-element-drop{
     position: relative;
