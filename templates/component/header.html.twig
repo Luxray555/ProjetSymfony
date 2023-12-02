@@ -20,14 +20,13 @@
                     <a class="dropdown-b" href="{{ path('app_search_user') }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_search_user' ? 'active' : '' }}">Utilisateur</li></a>
                 </ul>
             </div>
-            <a class="nav-element {{ app.request.attributes.get('_route') == 'app_commentaires' ? 'active' : '' }}" href="">Commentaires</a>
         </div>
         <div class="rightsec d-flex flex-row gap-2">
             {% if app.user %}
                 {% if (is_granted('ROLE_SRVCLIENT') or is_granted('ROLE_ADMIN')) %}
                     <div class="nav-element nav-image nav-element-drop">
                         <div class="dropdown-toggle img-header">
-                            <img src="{{ vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png')) }}" alt="Profile picture" />
+                            <img src="{{ app.user.avatar ? vich_uploader_asset(app.user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png')) : asset('/images/user/pp/default.png') }}" alt="Profile picture" />
                         </div>
                         <ul class="dropdown-a">
                             <a class="dropdown-b" href="{{ path('app_profile',{'id': app.user.id}) }}"><li class="nav-element {{ app.request.attributes.get('_route') == 'app_profile' ? 'active' : '' }}">Profil</li></a>

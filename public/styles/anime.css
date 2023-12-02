@@ -22,6 +22,11 @@
     max-width: 100%;
     color: #343434;
 }
+.cardAnime .info p{
+    word-wrap: anywhere;
+    word-break: break-all;
+    white-space: normal;
+}
 
 .cardAnime .cover{
     margin-top: -105px;
@@ -33,6 +38,36 @@
     object-fit: cover;
     object-position: center;
     box-shadow: 0 0 29px rgba(49,54,68,.25);
+}
+
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10%;
+}
+.cardInfo .info .info-content p{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cardInfo .info .info-content .info-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+
+}
+.cardInfo .info .info-content .info-element{
+    color: white;
+    background-color: #373737;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.cardInfo .info .info-content .info-date{
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .interact{
@@ -107,6 +142,7 @@
 .interact .commentaire-textarea{
     resize: none;
     height: 100px;
+    border-radius: 5px;
 }
 
 .interact .commentaire-label{
@@ -140,7 +176,7 @@
 }
 
 .interact .bloc-users{
-    max-height: 400px;
+    max-height: 300px;
     overflow: scroll;
     display: flex;
     flex-direction: column;

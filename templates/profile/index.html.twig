@@ -20,15 +20,18 @@
                 </a>
             </div>
         {% endif %}
-            <div class="container">
-                <div class="banner-content">
-                    <img src="{{ user.avatar ? (vich_uploader_asset(user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png'))) : asset('/images/user/pp/default.png') }}" alt="Profile picture">
-                    <div class="user-info">
-                        <h5>{{ user.getUsername() }}</h5>
-                        <p>{{ user.bio }}</p>
-                    </div>
+    </div>
+    <div class="container">
+        <div class="banner-content">
+            <img src="{{ user.avatar ? (vich_uploader_asset(user.avatar, 'ppImageFile') | default(asset('/images/user/pp/default.png'))) : asset('/images/user/pp/default.png') }}" alt="Profile picture">
+            <div class="user-info">
+                <h2>{{ user.username }}</h2>
+                <div class="bio">
+                    <h5>A propos :</h5>
+                    <p>{{ user.bio }}</p>
                 </div>
             </div>
+        </div>
     </div>
 
     <div class="content">

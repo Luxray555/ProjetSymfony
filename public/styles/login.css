@@ -1,44 +1,74 @@
+body{
+
+}
+
 form {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: calc(100vh - 170px);
+    background-image: url("../images/wallpaper/wallpaper-login-registration.png");
+    background-size: cover;
+    background-position: center;
+}
+
+form h1{
+    color: #ffffff !important;
 }
 
 .login-container{
-    margin-top: 10%;
-    width: 80%;
+    position: relative;
+    padding: 50px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    border: solid 1px #ffffff;
+    margin: 20px;
+}
+.login-container .mascotte{
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 110px;
 }
 
 .login-container a {
     text-decoration: underline;
-    color: #0f172a;
+    color: #ffffff;
 }
 
 .login-container label {
-    margin-top: 10px;
+    color: #ffffff;
+    margin-top: 15px;
 }
 
 .login-container input {
-    width: 50%;
+    max-width: 400px;
 }
 
 .login-container button {
     margin-top: 20px;
     background: transparent;
-    color: #0c4a6e;
+    color: #ffffff;
     font-weight: 500;
     border-radius: 4px;
     padding: 8px 16px;
     transition: all 0.25s ease-out;
-    border: solid #0c4a6e;
+    border: solid #ffffff;
 }
 
 .login-container button:hover {
-    background: #0a53be;
-    color: white;
-    border: transparent;
+    background: #ffffff;
+    color: #373737 ;
+    border: transparent solid;
+}
+
+@media screen and (max-width: 700px) {
+    .login-container .mascotte{
+        display: none;
+    }
 }

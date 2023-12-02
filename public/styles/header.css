@@ -50,6 +50,7 @@
     z-index: 100;
     list-style: none;
     padding: 20px 10px;
+    border: solid 1px #b2b2b2;
 }
 .nav-element-drop .dropdown-a.active{
     display: flex;
