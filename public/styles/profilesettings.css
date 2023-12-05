@@ -10,8 +10,26 @@ body {
     width: 100%;
 }
 
+.settings-header {
+    width: 100%;
+}
+
 h1 {
     margin-bottom: 2rem;
+}
+
+.back-button {
+    position: absolute;
+    margin-right: auto;
+    padding: 10px 10px;
+}
+
+.back-button a {
+    color: #0c4a6e;
+    text-decoration: none;
+}
+.back-button svg {
+    fill: #0c4a6e;
 }
 
 form {
@@ -62,7 +80,14 @@ form {
     margin-top: 0.5rem;
 }
 
-.pp label:hover {
+.fichier-selection label:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+.vich-image label:hover {
     background: #0a53be;
     color: white;
     border: solid transparent;
@@ -99,20 +124,30 @@ form {
 
 .vich-image {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
 }
 
 .vich-image input {
     display: none;
 }
 
-.vich-image a{
-    height: 5rem;
+.vich-image div input {
     display: block;
 }
 
+.pp .vich-image a{
+    height: 5rem;
+    display: block;
+    width: 5rem;
+}
+
+.banner .vich-image a{
+    height: 5rem;
+    width: 15rem;
+}
+
 .vich-image img {
-    height: 100%;
+    width: 100%;
 }
 
 /* Not image Field */
@@ -122,22 +157,11 @@ form {
 }
 
 .username input {
-
     display: block;
     width: 100%;
     padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--bs-body-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: 1px solid #0c4a6e;
+    border-radius: 4px;
 }
 
 .bio .widget {

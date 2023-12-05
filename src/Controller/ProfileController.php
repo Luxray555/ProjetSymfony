@@ -31,6 +31,8 @@ class ProfileController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
             $this->addFlash('success', 'Settings updated!');
+
+            return $this->redirectToRoute('app_profile', ['id' => $this->getUser()]);
         }
 
         return $this->render('profile/settings.html.twig', [
