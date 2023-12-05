@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var textarea = document.querySelector(".commentaire-textarea");
-    var characterCount = document.querySelector(".character-count");
-    var counter = document.querySelector(".counter");
-    var maxCharacters = 500;
+    let textarea = document.querySelector(".commentaire-textarea");
+    let characterCount = document.querySelector(".character-count");
+    let counter = document.querySelector(".counter");
+    let maxCharacters = 500;
+    let synopsis = document.querySelector('.synopsis');
 
     textarea.addEventListener('input', function () {
         var currentLength = textarea.value.length;
@@ -15,6 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             counter.classList.remove('exceeded-limit');
         }
+    });
+
+    if (synopsis.clientHeight >= synopsis.querySelector('p').clientHeight) {
+        synopsis.querySelector('button').classList.add('disabled');
+    }
+
+    addEventListener("resize", (event) => {
+        if (synopsis.clientHeight < synopsis.querySelector('p').clientHeight) {
+            synopsis.querySelector('button').classList.remove('disabled');
+        }else{
+            synopsis.querySelector('button').classList.add('disabled');
+        }
+    });
+
+    synopsis.querySelector('button').addEventListener('click', function () {
+        synopsis.classList.add('active');
     });
 
 });

@@ -69,6 +69,22 @@
                                     {% endif %}
                                 </p>
                             </div>
+                            <div class="info-bulle">
+                                <div class="sous-bulle">
+                                    <div class="genres">
+                                        <h5>Genres :</h5>
+                                        {% for genre in anime.genres %}
+                                            <span class="info-element">{{ genre.nom }}</span>
+                                        {% else %}
+                                            <span class="info-element">None</span>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="status">
+                                        <h5>Status :</h5>
+                                        <span class="info-element">{{ anime.status.nom | default("None") }}</span>
+                                    </div>
+                                </div>
+                            </div>
                         </a>
                     {% endfor %}
                 </div>

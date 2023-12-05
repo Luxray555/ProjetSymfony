@@ -20,7 +20,10 @@
             </div>
             <div class="info">
                 <h1>{{ anime.nom }}</h1>
-                <p>{{ anime.synopsis }}</p>
+                <div class="synopsis">
+                    <p>{{ anime.synopsis }}</p>
+                    <button id="show-more">Voir plus</button>
+                </div>
             </div>
         </div>
         <div class="cardInfo">
@@ -35,7 +38,7 @@
                         {% endfor %}
                     </p>
                     <p><span class="info-title">Statuts : </span><span
-                                class="info-element">{{ anime.status | default("None") }}</span></p>
+                                class="info-element">{{ anime.status.nom | default("None") }}</span></p>
                     <p><span class="info-title">Date de publication : </span><span
                                 class="info-date">{{ anime.dateAjout | date('d/m/Y') }}</span></p>
                 </div>

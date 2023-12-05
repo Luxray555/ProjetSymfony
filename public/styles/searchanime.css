@@ -195,13 +195,13 @@
     gap: 20px;
 }
 .container-animes .anime{
+    position: relative;
     aspect-ratio: 19/11;
     min-width: 220px;
     max-width: 400px;
     height: 300px;
     border-radius: 10px;
     padding: 10px;
-    overflow: hidden;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -209,6 +209,48 @@
     color: #343434;
     transition: all .4s;
 }
+.container-animes .anime .info-bulle{
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.container-animes .anime .info-bulle .sous-bulle{
+    margin-top: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 10px 20px;
+    transition: all .4s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    height: max-content;
+}
+.container-animes .anime .info-bulle .sous-bulle div{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.container-animes .anime:hover .info-bulle .sous-bulle{
+    opacity: 1;
+}
+.container-animes .anime:hover .info-bulle{
+    pointer-events: auto;
+}
+.container-animes .anime .info-bulle .sous-bulle .info-element{
+    color: white;
+    background-color: #373737;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
 .container-animes .anime:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
@@ -269,4 +311,15 @@
     flex-direction: column;
     margin-top: 10px;
     padding: 0px 10px;
+}
+
+@media screen and (max-width: 400px){
+    .container-animes .anime .top{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-animes .anime{
+        height: max-content;
+    }
+
 }
