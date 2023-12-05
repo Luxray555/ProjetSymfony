@@ -11,7 +11,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
-class AdminAnimeSubsciber implements EventSubscriberInterface
+class AdminAnimeSubscriber implements EventSubscriberInterface
 {
     private $entityManager;
     private $mailer;

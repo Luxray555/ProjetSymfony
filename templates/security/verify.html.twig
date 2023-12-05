@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Verifiez votre email{% endblock %}
+{% block javascripts %}
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+
+{% block body %}
+
+    <div class="flex align-center justify-center pt-16">
+        <div class="flex flex-column border-2 p-3 rounded-lg w-1/2">
+            <h1 class="text-center font-bold border-black mb-3 pb-1.5 text-2xl border-b-2">Merci de vérifier votre adresse email</h1>
+            <p>Pour accéder au site, veuillez vérifier votre adresse e-mail en cliquant sur le lien de vérification que nous vous avons envoyé. Si vous n'avez pas reçu cet e-mail, vous pouvez appuyer sur le bouton ci-dessous pour renvoyer l'e-mail de vérification à votre adresse. Une fois votre adresse e-mail vérifiée, vous pourrez accéder à toutes les fonctionnalités du site.</p>
+            <a href="{{ path('app_resend_email') }}" class="btn my-2">Renvoyer l'email de vérification</a>
+        </div>
+    </div>
+
+    {% if toast == true %}
+    <div class="flex align-center justify-center pt-2">
+        <div class="drop-shadow-lg flex bg-green-300 align-items justify-center py-1.5 px-3 gap-2 text-white rounded-full">
+            <span class="text-2xl"><i class="fas fa-check-circle"></i></span>
+            <p class="text-xl">Email de vérification renvoyé avec succés!</p>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

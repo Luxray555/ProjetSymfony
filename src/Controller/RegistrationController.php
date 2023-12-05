@@ -9,6 +9,7 @@ use App\Security\UserAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
@@ -49,7 +50,7 @@ class RegistrationController extends AbstractController
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from('no-reply@animeworld.com')
+                    ->from('no-reply@oxyjen.io')
                     ->to($user->getEmail())
                     ->subject('AnimeWorld - Confirmation de votre adresse email.')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
@@ -82,9 +83,35 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_register');
         }
 
-        // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success', 'Votre adresse a été vérifiée avec succés.');
 
         return $this->redirectToRoute('app_accueil');
     }
+
+    #[Route('/verify/resend-email', name: 'app_resend_email')]
+    public function resendVerificationEmail(Security $security) : Response {
+
+        $user = $security->getUser();
+
+        $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
+            (new TemplatedEmail())
+                ->from('no-reply@oxyjen.io')
+                ->to($user->getEmail())
+                ->subject('AnimeWorld - Confirmation de votre adresse email.')
+                ->htmlTemplate('registration/confirmation_email.html.twig')
+        );
+
+        return $this->render('security/verify.html.twig', [
+            'toast' => true,
+        ]);
+    }
+
+    #[Route('/verify/not-verified', name: 'app_email_not_verified')]
+    public function userEmailNotVerified(): Response
+    {
+        return $this->render('security/verify.html.twig', [
+            'toast' => false,
+        ]);
+    }
+
 }
