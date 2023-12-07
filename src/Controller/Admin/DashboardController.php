@@ -6,6 +6,7 @@ use App\Entity\Anime;
 use App\Entity\Avatar;
 use App\Entity\AnimeStatus;
 use App\Entity\Commentaire;
+use App\Entity\Contact;
 use App\Entity\Genre;
 use App\Entity\Note;
 use App\Entity\ReponseTicket;
@@ -59,5 +60,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Tickets', 'fas fa-ticket', Ticket::class);
         yield MenuItem::linkToCrud('Reponse Tickets', 'fa-solid fa-reply', ReponseTicket::class);
         yield MenuItem::linkToCrud('Status Anime', 'fas fa-exclamation', AnimeStatus::class);
+        yield MenuItem::linkToCrud('Contact', 'fas fa-envelope', Contact::class);
     }
 }
