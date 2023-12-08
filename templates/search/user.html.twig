@@ -42,7 +42,7 @@
                             <h6>Bio</h6>
                             <p>
                                 {% if user.bio %}
-                                    {{ user.bio | slice(0, 70) }}...
+                                    {{ user.bio | length > 70 ? user.bio | slice(0, 70) ~ "..." : user.bio }}
                                 {% else %}
                                     Aucune bio
                                 {% endif %}

@@ -1,5 +1,10 @@
 <br/>
 <p align="center">
+  <a href="https://github.com/ShaanCoding/ReadME-Generator">
+    <img src="public/images/logo/icon.png" alt="Logo" width="200" height="200">
+  </a>
+</p>
+<p align="center">
   <h1 align="center">AnimeWorld</h1>
 
   <p align="center">
@@ -23,7 +28,7 @@
 
 ## À propos
 
-<img src="images/screenshot.png" width="1000">
+<img src="public/images/screenshot/screenshot.png" width="1000">
 
 Ce projet a été réalisé pour notre cours de Programmation Web Serveur. Il est réalisé avec la framework Symfony et en utilisant d'autres librairies.
 

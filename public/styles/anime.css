@@ -153,6 +153,7 @@
 
 .interact .bloc p{
     color: white;
+    word-break: break-word;
     font-size: calc(0.6rem + 0.5vw);
     margin-bottom: 0;
 }
