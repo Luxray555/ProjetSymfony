@@ -41,13 +41,13 @@
             <h2>Notes</h2>
                 <div class="notes_container">
                 {% for note in user.getNotes() %}
-                    <div class="note_display">
-                        <a href="{{ path('app_anime_show', {'id': note.anime.id}) }}">
+                    <a class="note_display" href="{{ path('app_anime_show', {'id': note.anime.id}) }}">
+                        <div>
                             <img class="cover" src="{{ vich_uploader_asset(note.anime, "coverImageFile") }}" alt="Note Image">
-                        </a>
+                        </div>
                         <h3>{{ note.anime.nom|length > 20 ? note.anime.nom|slice(0, 20) ~ '...' : note.anime.nom }}</h3>
                         {{ component('stars', {note:note.note}) }}
-                    </div>
+                    </a>
                 {% else %}
                     <p>Vous n'avez pas encore mis de notes 😢</p>
                 {% endfor %}
