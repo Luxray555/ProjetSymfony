@@ -90,7 +90,7 @@ class ServiceClientController extends AbstractController
             $entityManager->flush();
 
             $email = (new Email())
-                ->from('no-reply@oxyjen.io')
+                ->from('no-reply@animeworld.world')
                 ->to($ticket->getAuteur()->getEmail())
                 ->subject('Nouvelle réponse sur votre ticket.')
                 ->text($user->getUsername() . ' a répondu à votre ticket.');
@@ -133,7 +133,7 @@ class ServiceClientController extends AbstractController
         $entityManager->flush();
 
         $email = (new Email())
-            ->from('no-reply@oxyjen.io')
+            ->from('no-reply@animeworld.world')
             ->to($ticket->getAuteur()->getEmail())
             ->subject('Votre ticket a été ' . ($newStatus ? 'ouvert' : 'fermé') .'.')
             ->text('Votre ticket ' . $ticket->getTitre() . ' a été ' . ($newStatus ? 'ouvert' : 'fermé'));

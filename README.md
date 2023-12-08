@@ -6,7 +6,7 @@
     Projet réalisé avec Symfony pour le cours de Programmation Web Serveur
     <br/>
     <br/>
-    <a href="https://github.com/Luxray555/ProjetSymfony">Voir la démo</a>
+    <a href="https://animeworld.world">Voir la démo</a>
     .
     <a href="https://github.com/Luxray555/ProjetSymfony/issues">Signaler un bug</a>
   </p>
@@ -57,7 +57,7 @@ composer install
 DATABASE_URL=""
 MAILER_DSN=""
 ```
-3. Lancez !
+4. Lancez !
 ```sh
 symfony serve
 ```
@@ -67,4 +67,4 @@ symfony serve
 * **Bilal Dieumegard** - *Etudiant en Informatique* - [Github](https://github.com/Luxray555/)
 * **Maxence Michel** - *Etudiant en Informatique* - [Github](https://github.com/maxencce)
 * **Nabil Ould Hamou** - *Etudiant en Informatique* - [Github](https://github.com/NabilOuldHamou)
-* **Yanis Bouarfa** - *Etudiant en Informatique*
+* **Yanis Bouarfa** - *Etudiant en Informatique* - [Github](https://github.com/Yanax373)

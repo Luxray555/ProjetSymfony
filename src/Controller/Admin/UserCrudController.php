@@ -86,7 +86,7 @@ class UserCrudController extends AbstractCrudController
         } else {
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from('no-reply@oxyjen.io')
+                    ->from('no-reply@animeworld.world')
                     ->to(new Address($user->getEmail()))
                     ->subject('AnimeWorld - Confirmation de votre adresse email.')
                     ->htmlTemplate('registration/confirmation_email.html.twig')

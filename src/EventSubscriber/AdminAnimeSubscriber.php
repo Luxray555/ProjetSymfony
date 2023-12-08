@@ -44,7 +44,7 @@ class AdminAnimeSubscriber implements EventSubscriberInterface
 
         foreach ($users as $user) {
             $email = (new TemplatedEmail())
-                ->from('no-reply@oxyjen.io')
+                ->from('no-reply@animeworld.world')
                 ->to($user->getEmail())
                 ->subject('Un nouvel anime est disponible sur AnimeWorld!')
                 ->htmlTemplate('anime/email.html.twig')
