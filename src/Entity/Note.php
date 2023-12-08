@@ -6,11 +6,12 @@ use App\Repository\NoteRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: NoteRepository::class)]
 #[UniqueEntity(
     fields: ['anime', 'user'],
-    message: 'Already a note for this anime by this user',
+    message: 'Vous avez déjà noté cet anime'
 )]
 class Note
 {
@@ -20,6 +21,7 @@ class Note
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Assert\Range(notInRangeMessage: 'The note must be between 0 and 5', min: 0, max: 5)]
     private ?float $note = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable:true, options: ["default" => "CURRENT_TIMESTAMP"])]
@@ -35,7 +37,7 @@ class Note
 
     public function __construct()
     {
-        $this->dateCreation = new \DateTimeImmutable();
+        $this->dateCreation = new \DateTime();
     }
 
     public function getId(): ?int

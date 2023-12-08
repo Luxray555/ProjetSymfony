@@ -1,0 +1,326 @@
+
+.form-search .search-line .search .filter-btn{
+    position: absolute;
+    font-weight: 500;
+    bottom: 50%;
+    padding: 5px 15px;
+    border-radius: 0.375rem;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    right: 10px;
+    transform: translateY(50%);
+    background-color: transparent;
+    color: #343434;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all .4s;
+}
+.form-search .search-line .search .filter-btn.active i{
+    transform: scaleY(-1);
+}
+
+.form-search .search-line .search .filter-btn:hover{
+    background-color: #343434;
+    color: white;
+}
+.form-search .filter{
+    height: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow: hidden;
+    transition: all .4s;
+}
+.form-search .filter.active{
+    overflow: visible;
+    height: max-content;
+}
+.form-search .filter .checkbox-list{
+    max-width: 300px;
+    width: 100%;
+    min-width: 80px;
+}
+.form-search .filter .checkbox-list .name-list{
+    font-weight: 600;
+}
+.form-search .filter .choice-list{
+    position: relative;
+    height: max-content;
+    width: 100%;
+}
+
+.form-search .filter .choice-list .choice{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    border: solid 1px #343434;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .4s;
+    padding: 5px 30px 5px 5px;
+    height: 45px;
+    overflow: hidden;
+}
+
+.form-search .filter .choice-list .choice span{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #343434;
+    color: white;
+}
+
+.form-search .filter .choice-list .choice .all{
+    color: #343434;
+    background-color: transparent;
+}
+
+.form-search .filter .choice-list .arrow-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.form-search .filter .choice-list .choice-box{
+    z-index: 10;
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+    background-color: white;
+    left: 0;
+    border-radius: 10px;
+    border: solid 1px #343434;
+    height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.form-search .filter .choice-list.active .choice-box{
+    height: max-content;
+    opacity: 1;
+    z-index: 10;
+    padding: 4px 0;
+}
+.form-search .filter .choice-list.active .arrow-icon{
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.form-search .filter .choice-list .choice-box .line{
+    padding: 1px 5px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 450;
+}
+.form-search .filter .choice-list .choice-box .line input[type="checkbox"]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.form-search .filter .choice-list .choice-box .line label{
+    width: 100%;
+    height: 100%;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+.form-search .filter .choice-list .choice-box .line .cross-icon{
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    top: 55%;
+    transform: translateY(-50%);
+    transition: all .1s;
+    color: white;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+.form-search .filter .choice-list .choice-box .line input[type="checkbox"]:checked + label{
+    background-color: #343434;
+    color: white;
+}
+.form-search .filter .choice-list .choice-box .line input[type="checkbox"]:hover + label{
+    background-color: #343434;
+    color: white;
+}
+.form-search .filter .choice-list .choice-box .line input[type="checkbox"]:checked + label{
+    background-color: #343434;
+    color: white;
+}.form-search .filter .choice-list .choice-box .line input[type="checkbox"]:checked:hover + label{
+    background-color: #b00000;
+ }
+
+.form-search .filter .choice-list .choice-box .line input[type="checkbox"]:checked:hover ~ .cross-icon{
+    opacity: 1;
+}
+.container-block{
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    justify-content: space-between;
+}
+.container-block .not-found-container{
+    display: flex;
+    height: 400px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container-block .not-found-container .not-found{
+    text-align: center;
+    font-family: ArchivoBlack;
+    color: #343434;
+    font-size: 30px;
+}
+
+.container-animes{
+    height: 100%;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.container-animes .anime{
+    position: relative;
+    aspect-ratio: 19/11;
+    min-width: 220px;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #343434;
+    transition: all .4s;
+}
+.container-animes .anime .info-bulle{
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.container-animes .anime .info-bulle .sous-bulle{
+    margin-top: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 10px 20px;
+    transition: all .4s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    height: max-content;
+}
+.container-animes .anime .info-bulle .sous-bulle div{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.container-animes .anime:hover .info-bulle .sous-bulle{
+    opacity: 1;
+}
+.container-animes .anime:hover .info-bulle{
+    pointer-events: auto;
+}
+.container-animes .anime .info-bulle .sous-bulle .info-element{
+    color: white;
+    background-color: #373737;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.container-animes .anime:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.container-animes .anime .banner{
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 16 / 6;
+    width: 100%;
+    min-height: 100px;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+.container-animes .anime .banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 16 / 6;
+}
+
+.container-animes .anime .top{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 20px;
+    margin-top: -50px;
+    z-index: 1;
+}
+
+.container-animes .anime .top .cover{
+    position: relative;
+    z-index: 2;
+    width: 100px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: #ccc;
+    aspect-ratio: 9 / 13;
+    object-fit: cover;
+    object-position: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.container-animes .anime .top .cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 9 / 13;
+}
+.container-animes .anime .info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+@media screen and (max-width: 400px){
+    .container-animes .anime .top{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-animes .anime{
+        height: max-content;
+    }
+
+}

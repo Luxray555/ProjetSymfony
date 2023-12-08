@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+<div class="form-stars">
+    {{ form_errors(form) }}
+    <div class="stars">
+        {% for child in form.note %}
+            <div class="star-box hover {{ child.vars.value==0 ? "zero" : child.vars.value*2%2==0 ? "right" : "left" }}">
+                {{ form_widget(child) }}
+                {% if child.vars.value!=0 %}
+                    <i class="fa-solid fa-star star-icon"></i>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <button type="submit" class="star-btn">Envoyer</button>
+</div>
+{{ form is defined ? form_end(form) : "" }}

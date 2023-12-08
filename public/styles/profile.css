@@ -1,0 +1,225 @@
+.banner  {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    background-size:cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.banner img {
+    max-height: 230px;
+    max-width: 160px;
+    border-radius: 2px;
+}
+
+svg {
+    fill: black;
+}
+
+.container-profile {
+    margin-top: -100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container-profile .banner-content {
+    margin: 0 20px;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+    transition: all .4s;
+}
+.container-profile .banner-content .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+    width: 100%;
+    color: white;
+}
+.container-profile .banner-content .user-info h2{
+    margin: 0;
+}
+.container-profile .banner-content .user-info .bio{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px 0 0 0;
+    border: solid 1px #373737;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all .4s;
+}
+.container-profile .banner-content .user-info .bio h5{
+    color: #373737;
+    margin: 0;
+}
+.container-profile .banner-content .user-info .bio p{
+    color: #373737;
+    margin: 0 10px 0 10px;
+    height: 200px;
+}
+.container-profile .banner-content .img {
+    min-width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 1000px;
+    border: #ffffff solid 5px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    transition: all .4s;
+}
+.container-profile .banner-content .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.settings {
+    align-self: end;
+    padding: 10px 20px;
+}
+
+.settings a {
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 678px) {
+
+    .container-profile{
+        margin-top: -225px;
+    }
+    .container-profile .banner-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .container-profile .banner-content h2{
+        color: #373737;
+        text-align: center ;
+    }
+    .container-profile .banner-content .user-info{
+        margin-top: 50px;
+    }
+
+    .container-profile .banner-content .img{
+        min-width: 150px;
+        height: 150px;
+    }
+
+}
+
+.content {
+    padding: 25px;
+}
+
+.notes_container {
+    display: inline-flex;
+    padding: 30px 10px;
+    gap: 5px;
+    max-width: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.note_display {
+    text-decoration: none;
+    color: #373737;
+    width: 220px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all .4s;
+}
+
+.note_display:hover{
+    text-decoration: none;
+    color: #373737;
+}
+
+.note_display h3 {
+    height: 65px;
+}
+
+.note_display img{
+    transition: all .4s;
+    border-radius: 5px;
+    aspect-ratio: 9 / 14;
+    width: 125px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.note_display:hover {
+    transform: scale(1.1);
+}
+
+.note_display:hover img {
+    box-shadow: 0 0 29px rgba(49,54,68,.6);
+}
+.stars .star-box.left .star-icon {
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%) !important;
+}
+
+.comm_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    gap: 5px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.comm_display {
+    padding: 20px 30px;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    transition: all .4s;
+}
+
+.comm_display img{
+    border-radius: 5px;
+    aspect-ratio: 9 / 14;
+    width: 90px;
+    object-fit: cover;
+    object-position: center;
+    transition: all .4s;
+
+}
+
+.comm_display:hover {
+    transform: translateX(-10px);
+}
+
+.comm_display:hover img {
+    box-shadow: 0 0 20px rgba(49,54,68,.6);
+}
+
+
+.comm_content {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profil-top img{
+    aspect-ratio: 1;
+    width: 150px;
+}
+.profil-top{
+    align-items: center;
+}

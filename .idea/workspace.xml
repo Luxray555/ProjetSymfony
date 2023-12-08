@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="...">
+    <list default="true" id="b4f78ffb-cb1c-416e-9e6f-c0adba873b3b" name="Changes" comment="Rectification des warning (suppression des px inutile dans les fichiers css)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/component/components/choicelist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/components/choicelist.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search/anime.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/anime.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +21,30 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="detached" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Luxray555&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="Luxray555" />
+        <option name="repository" value="ProjetSymfony" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="4b6d3cd3-9a39-4ea6-b853-1f10c7d33cf5" />
+        <option name="url" value="https://github.com/Luxray555/ProjetSymfony.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -165,6 +185,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/symfony/ux-twig-component" />
+      <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -180,22 +204,31 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bilal/PhpstormProjects/ProjetSymfony/public/styles/select2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles\select2" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\scripts\select2" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony" />
       <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\styles" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\anime" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\src\Controller" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\src\Entity" />
-      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\src\Form" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates\search" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\templates" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\banner" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\fonts" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\user\pp" />
+      <recent name="C:\Users\Bilal\PhpstormProjects\ProjetSymfony\public\images\anime\banner" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,7 +261,27 @@
       <workItem from="1700167241771" duration="632000" />
       <workItem from="1700312042854" duration="12876000" />
       <workItem from="1700330515337" duration="497000" />
-      <workItem from="1700332087491" duration="776000" />
+      <workItem from="1700332087491" duration="1613000" />
+      <workItem from="1700333908152" duration="8039000" />
+      <workItem from="1700354191119" duration="1406000" />
+      <workItem from="1700680956225" duration="15698000" />
+      <workItem from="1700748129723" duration="15413000" />
+      <workItem from="1700817569431" duration="1646000" />
+      <workItem from="1700919859949" duration="3883000" />
+      <workItem from="1700925970085" duration="6000" />
+      <workItem from="1700942924064" duration="129000" />
+      <workItem from="1700950527074" duration="372000" />
+      <workItem from="1701090106494" duration="11540000" />
+      <workItem from="1701101726673" duration="5629000" />
+      <workItem from="1701107466219" duration="545000" />
+      <workItem from="1701120130423" duration="9646000" />
+      <workItem from="1701165677788" duration="10405000" />
+      <workItem from="1701176271114" duration="7147000" />
+      <workItem from="1701183553165" duration="6330000" />
+      <workItem from="1701190756350" duration="2992000" />
+      <workItem from="1701277834275" duration="258000" />
+      <workItem from="1701292996207" duration="1857000" />
+      <workItem from="1701346359435" duration="1165000" />
     </task>
     <task id="LOCAL-00001" summary="Modification du titre dans les pages administrateur">
       <option name="closed" value="true" />
@@ -310,7 +363,71 @@
       <option name="project" value="LOCAL" />
       <updated>1700332288104</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="...">
+      <option name="closed" value="true" />
+      <created>1700333113977</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700333113977</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Modification des pages de d'anime avec les notes et les commentaires.">
+      <option name="closed" value="true" />
+      <created>1700342125278</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700342125278</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Modification des images de profile par defaut et de leurs css">
+      <option name="closed" value="true" />
+      <created>1700602868047</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700602868047</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil.">
+      <option name="closed" value="true" />
+      <created>1700696885598</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700696885598</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Modification image profil dans la page profil">
+      <option name="closed" value="true" />
+      <created>1700776674703</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700776674703</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Modification du formulaire de note et des asserts de la note">
+      <option name="closed" value="true" />
+      <created>1700818945858</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700818945858</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Modification date (d-m-Y) + bug slider accueil fix + max des dernière action de l'utilisateur 8-&gt;4">
+      <option name="closed" value="true" />
+      <created>1700921933548</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700921933548</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Creation de l'entité Genre">
+      <option name="closed" value="true" />
+      <created>1701093053783</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701093053783</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +454,15 @@
     <MESSAGE value="Rectification" />
     <MESSAGE value="Ajout page anime + css (sans l'option d'ajout de commentaire)" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Modification des pages de d'anime avec les notes et les commentaires." />
+    <MESSAGE value="Modification des images de profile par defaut et de leurs css" />
+    <MESSAGE value="Modification de la page d'accueil et resolution du bug des liens pour les activités + Modifications du css de la page profil." />
+    <MESSAGE value="Modification image profil dans la page profil" />
+    <MESSAGE value="Modification du formulaire de note et des asserts de la note" />
+    <MESSAGE value="Modification date (d-m-Y) + bug slider accueil fix + max des dernière action de l'utilisateur 8-&gt;4" />
+    <MESSAGE value="Creation de l'entité Genre" />
+    <MESSAGE value="Ajout des pages d'erreurs" />
+    <MESSAGE value="Modification du header + de la police d'écriture à l'accueil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification du header + de la police d'écriture à l'accueil" />
   </component>
 </project>

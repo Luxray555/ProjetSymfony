@@ -1,0 +1,63 @@
+.stars{
+    display: flex;
+    flex-direction: row;
+}
+.stars input[type="radio"]{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.stars .star-box{
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 40px;
+    transition: all 0.2s ease;
+}
+.stars .star-box .star-icon{
+    height: 100%;
+    width: 200%;
+    pointer-events: none;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    color: grey;
+}
+.stars .star-box.left .star-icon {
+    clip-path: polygon(0 0, 42% 0, 42% 100%, 0% 100%);
+    z-index: 3;
+    left: 0;
+}
+.stars .star-box.right .star-icon {
+    right: 0;
+    z-index: 1;
+}
+.stars .star-box.active .star-icon{
+    color: yellow;
+}
+.stars .star-box.hover.on .star-icon{
+    color: #9a9a00;
+}
+
+.form-stars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-stars .star-btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all .4s;
+    color: #343434;
+    border: 1px solid #343434;
+    background-color: white;
+}
+.form-stars .star-btn:hover {
+    background-color: #343434;
+    color: yellow;
+    border: 1px solid yellow;
+}
+.form-stars .stars {
+    margin-left: -10px;
+}

@@ -1,5 +1,5 @@
 .nav{
-    height: 60px;
+    height: 70px;
     z-index: 100;
 }
 
@@ -15,15 +15,64 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: visible;
 }
 
 .nav-element{
-    padding: 7px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     color: white;
     text-decoration: none;
     font-weight: bold;
     background-color: #2b2e30;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-element-drop{
+    position: relative;
+}
+.nav-element-drop.active{
+    background-color: white !important;
+    color: #212529;
+}
+.nav-element-drop .dropdown-a{
+    position: absolute;
+    top: calc( 100% + 15px );
+    left: 0;
+    min-width: 200px;
+    width: 150%;
+    background-color: #2b2e30;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 100;
+    list-style: none;
+    padding: 20px 10px;
+    border: solid 1px #b2b2b2;
+}
+.nav-element-drop .dropdown-a.active{
+    display: flex;
+}
+
+.nav-element-drop a li{
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .4s;
+    background-color: #4a4a4f;
+    width: 100%;
+    cursor: pointer;
+}
+.nav-element-drop a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-element-drop li:hover{
+    background-color: #ffffff;
 }
 
 .nav-element.logout:hover{
@@ -41,28 +90,58 @@
     background-color: white;
     transition: all .4s;
 }
+.nav-profil{
+    align-items: center;
+    gap: 5px;
+}
+.nav-pfp{
+    visibility: visible;
+    aspect-ratio: 1;
+    width: 25px;
+    border-radius: 100%;
+}
+
+.nav-element.nav-image{
+    padding: 6px 15px;
+}
+.nav-element .img-header{
+    width: 35px;
+    height: 35px;
+    aspect-ratio: 1;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.nav-element .img-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1;
+}
 
 @media screen and (max-width: 780px) {
     .nav .right {
-        height: 0 !important;
+        height: 0;
         display: flex !important;
         background-color: #212529;
         position: absolute;
         flex-direction: column !important;
         justify-content: space-around !important;
         align-items: center !important;
-        right: 0px;
+        right: 0;
         width: 300px !important;
         top: 100%;
         overflow: hidden;
-        border-radius: 0px 0px 20px 20px;
-        transition: height .5s;
+        border-radius: 0 0 20px 20px;
     }
     .nav .hamburger{
         display: block;
     }
     .nav .right.active{
-        height: 400px !important;
+        overflow: visible;
+        height: 400px;
     }
     .nav .right .rightsec{
         flex-direction: column !important;
@@ -71,5 +150,9 @@
     .nav .right .nav-element{
         width: 100% !important;
 
+    }
+
+    .nav-element-drop .dropdown-a{
+        width: 100%;
     }
 }

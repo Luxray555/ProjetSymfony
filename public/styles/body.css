@@ -1,3 +1,26 @@
 .body{
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 170px);
+}
+@font-face {
+    font-family: 'ArchivoBlack';
+    src: url('../fonts/ArchivoBlack-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3b3b3b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-search-cancel-button{
+    display: none;
 }

@@ -1,24 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}S'inscrire - AnimeWorld{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("/styles/register.css") }}">
+{% endblock %}
 
 {% block body %}
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-
-    <h1>Register</h1>
-
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
+    <div class="register-container">
+        <img class="mascotte" src="{{ asset('images/mascotte/mascotte.png') }}" alt="Mascotte">
+        <h1>Créez votre compte</h1>
+        <a href="{{ path('app_login') }}">Vous avez déjà un compte? Cliquez ici pour vous connecter!</a>
+        {% for formRow in registrationForm %}
+            {% if formRow.vars.name != "_token" %}
+                {{ form_label(formRow) }}
+                {{ form_widget(formRow) }}
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn">S'inscrire</button>
+    </div>
     {{ form_end(registrationForm) }}
 {% endblock %}

@@ -1,0 +1,222 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.settings-header {
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    position: absolute;
+    margin-right: auto;
+    padding: 10px 10px;
+}
+
+.back-button a {
+    color: #0c4a6e;
+    text-decoration: none;
+}
+.back-button svg {
+    fill: #0c4a6e;
+}
+
+form {
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 1600px;
+    min-width: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+.pp, .banner {
+    background-color: #b7b7b7;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+
+.fichier-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fichier-selection p {
+    padding: 0 5px;
+    align-self: end;
+    margin-bottom: 0;
+}
+
+.pp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.pp label {
+    align-self: start;
+
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 4px 4px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+    margin-top: 0.5rem;
+}
+
+.fichier-selection label:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 2rem
+}
+
+.banner label {
+    align-self: start;
+
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 4px 4px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+    margin-top: 0.5rem;
+}
+
+.banner label:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+.vich-image {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.vich-image input {
+    display: none;
+}
+
+.vich-image div input {
+    display: block;
+}
+.img-widget {
+    min-height: 100px;
+}
+.vich-image a{
+    border-radius: 5px;
+}
+
+.pp .vich-image a{
+    display: block;
+    max-width: 11rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+.banner .vich-image a{
+    max-width: 32rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+.pp .vich-image img {
+    aspect-ratio: 1;
+}
+.banner .vich-image img {
+    aspect-ratio: 16/9;
+}
+.vich-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Not image Field */
+
+.username .widget {
+    padding-left: 20px;
+}
+
+.username input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #0c4a6e;
+    border-radius: 4px;
+}
+
+.bio .widget {
+    padding-left: 20px;
+}
+
+.bio textarea {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #0c4a6e;
+    border-radius: 4px;
+    resize: none;
+    height: 5rem;
+}
+
+
+.submit {
+    align-self: end;
+
+    background: transparent;
+    color: #0c4a6e;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 4px 4px;
+    transition: all 0.25s ease-out;
+    border: solid #0c4a6e;
+    margin-top: 0.5rem;
+}
+
+.submit:hover {
+    background: #0a53be;
+    color: white;
+    border: solid transparent;
+    cursor: pointer;
+}
+

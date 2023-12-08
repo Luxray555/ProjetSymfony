@@ -1,0 +1,15 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}Répondre à un message{% endblock %}
+{% block javascripts %}
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        {{ form_start(form) }}
+        {{ form_widget(form.reponse, {'attr': {'class': 'form-control', 'style': 'resize:none', 'placeholder': 'Votre réponse...'}}) }}
+        <button class="btn btn-primary mt-2">{{ button_label|default('Envoyer') }}</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

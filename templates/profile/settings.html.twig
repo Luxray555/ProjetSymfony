@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Settings{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/profilesettings.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ asset('scripts/profilesettings.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="settings-header">
+        <div class="back-button">
+            <a href="{{ path('app_profile', {'id': app.user}) }}" ><svg height="16" width="16" viewBox="0 0 512 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"></path></svg>
+            Profile</a>
+        </div>
+    </div>
+    <div class="settings-container">
+        <h1>User settings</h1>
+        {{ form_start(form) }}
+
+        <div class="pp field">
+            <div class="img-widget" >
+                {{ form_widget(form.avatar.ppImageFile) }}
+            </div>
+            <div class="fichier-selection">
+                {{ form_label(form.avatar.ppImageFile) }}
+                <p id="pp-text-file"></p>
+            </div>
+        </div>
+
+        <div class="banner field">
+            <div class="img-widget" >
+                {{ form_widget(form.avatar.bannerImageFile) }}
+            </div>
+            <div class="fichier-selection">
+                {{ form_label(form.avatar.bannerImageFile) }}
+                <p id="banner-text-file"></p>
+            </div>
+        </div>
+
+        <div class="username field">
+            {{ form_label(form.username) }}
+            <div class="widget">
+                {{ form_widget(form.username) }}
+            </div>
+        </div>
+
+        <div class="bio field">
+            {{ form_label(form.bio) }}
+            <div class="widget">
+                {{ form_widget(form.bio) }}
+            </div>
+        </div>
+
+        <button class="submit" type="submit">Save</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AnimeRepository::class)]
@@ -25,10 +26,10 @@ class Anime
     #[ORM\Column(type: Types::TEXT)]
     private ?string $synopsis = null;
 
-    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Commentaire::class)]
+    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Commentaire::class, cascade: ['persist', 'remove'])]
     private Collection $commentaires;
 
-    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Note::class)]
+    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Note::class, cascade: ['persist', 'remove'])]
     private Collection $notes;
 
     #[Vich\UploadableField(mapping: 'cover_anime', fileNameProperty: 'coverImageName', size: 'coverImageSize')]
@@ -55,11 +56,20 @@ class Anime
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $dateAjout = null;
 
+    #[ORM\ManyToMany(targetEntity: Genre::class, mappedBy: 'animes')]
+    #[Assert\Count(min: 1, minMessage: "L'anime doit avoir au moins un genre.")]
+    private Collection $genres;
+
+    #[ORM\ManyToOne(inversedBy: 'animes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?AnimeStatus $status = null;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
         $this->notes = new ArrayCollection();
         $this->dateAjout = new \DateTimeImmutable();
+        $this->genres = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -251,4 +261,44 @@ class Anime
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Genre>
+     */
+    public function getGenres(): Collection
+    {
+        return $this->genres;
+    }
+
+    public function addGenre(Genre $genre): static
+    {
+        if (!$this->genres->contains($genre)) {
+            $this->genres->add($genre);
+            $genre->addAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGenre(Genre $genre): static
+    {
+        if ($this->genres->removeElement($genre)) {
+            $genre->removeAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function getStatus(): ?AnimeStatus
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?AnimeStatus $status): static
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
 }

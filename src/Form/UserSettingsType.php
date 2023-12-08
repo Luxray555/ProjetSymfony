@@ -2,10 +2,14 @@
 
 namespace App\Form;
 
+use App\Entity\Avatar;
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserSettingsType extends AbstractType
 {
@@ -13,9 +17,11 @@ class UserSettingsType extends AbstractType
     {
         $builder
             ->add('username')
-            ->add('ppImageName')
-            ->add('bannerImageName')
-            ->add('bio')
+            ->add('avatar', AvatarType::class, [
+                'label' => false,
+                'required' => false,
+            ])
+            ->add('bio', TextareaType::class)
         ;
     }
 
