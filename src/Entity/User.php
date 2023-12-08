@@ -46,20 +46,20 @@ class User implements Serializable, UserInterface, PasswordAuthenticatedUserInte
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Commentaire::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Commentaire::class, cascade: ['persist', 'remove'])]
     private Collection $commentaires;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Note::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Note::class, cascade: ['persist', 'remove'])]
     private Collection $notes;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: true)]
     #[Ignore]
     private ?Avatar $avatar = null;
-    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: ReponseTicket::class)]
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: ReponseTicket::class, cascade: ['persist', 'remove'])]
     private Collection $reponseTickets;
 
-    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Ticket::class)]
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Ticket::class, cascade: ['persist', 'remove'])]
     private Collection $tickets;
 
     public function __construct()

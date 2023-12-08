@@ -26,10 +26,10 @@ class Anime
     #[ORM\Column(type: Types::TEXT)]
     private ?string $synopsis = null;
 
-    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Commentaire::class)]
+    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Commentaire::class, cascade: ['persist', 'remove'])]
     private Collection $commentaires;
 
-    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Note::class)]
+    #[ORM\OneToMany(mappedBy: 'anime', targetEntity: Note::class, cascade: ['persist', 'remove'])]
     private Collection $notes;
 
     #[Vich\UploadableField(mapping: 'cover_anime', fileNameProperty: 'coverImageName', size: 'coverImageSize')]
