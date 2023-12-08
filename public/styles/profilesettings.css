@@ -19,17 +19,33 @@ h1 {
 }
 
 .back-button {
-    position: absolute;
-    margin-right: auto;
+    width: max-content;
     padding: 10px 10px;
 }
 
 .back-button a {
+    padding: 10px;
     color: #0c4a6e;
     text-decoration: none;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all .4s;
+    width: 100%;
 }
 .back-button svg {
-    fill: #0c4a6e;
+    transition: all .4s;
+}
+.back-button a:hover {
+    background: black;
+    color: white;
+    border: 3px solid white;
+}
+.back-button a:hover svg {
+    fill: white;
 }
 
 form {

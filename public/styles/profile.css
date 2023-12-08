@@ -87,12 +87,28 @@ svg {
 }
 .settings {
     align-self: end;
-    padding: 10px 20px;
+    padding: 20px;
 }
 
 .settings a {
+    background: #ffffff;
+    padding: 8px 10px 10px 10px;
+    border-radius: 10px;
+    border: 3px solid black;
     color: white;
     text-decoration: none;
+    transition: all .4s;
+}
+.settings a svg {
+    transition: all .4s;
+}
+.settings a:hover {
+    background: black;
+    color: white;
+    border: 3px solid white;
+}
+.settings a:hover svg {
+    fill: white;
 }
 
 @media screen and (max-width: 678px) {
