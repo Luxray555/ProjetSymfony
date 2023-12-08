@@ -8,9 +8,6 @@
 
 {% block body %}
 <form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
     {% if app.user %}
         <div class="mb-3">
@@ -21,6 +18,9 @@
         <img class="mascotte" src="{{ asset('images/mascotte/mascotte.png') }}" alt="Mascotte">
         <h1 class="h3 mb-3 font-weight-normal">Connectez vous à votre compte</h1>
         <a href="{{ path('app_register') }}">Vous n'avez pas encore de compte? Cliquez ici pour en créer un!</a>
+        {% if error %}
+            <div class="alert alert-danger">Email / Mot de passe invalide.</div>
+        {% endif %}
         <label for="inputEmail">Email</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
         <label for="inputPassword">Mot de passe</label>
@@ -34,7 +34,6 @@
         <button type="submit">
             Se connecter
         </button>
-
     </div>
 </form>
 {% endblock %}

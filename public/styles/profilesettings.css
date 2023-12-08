@@ -6,8 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 300px;
     width: 100%;
+    padding: 20px 20px;
 }
 
 .settings-header {
@@ -35,7 +35,8 @@ h1 {
 form {
     padding: 15px 20px;
     width: 100%;
-    min-width: 25rem;
+    max-width: 1600px;
+    min-width: 200px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -45,11 +46,17 @@ form {
 .field {
     margin-bottom: 1rem;
 }
+.pp, .banner {
+    background-color: #b7b7b7;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
 
 .fichier-selection {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -87,13 +94,6 @@ form {
     cursor: pointer;
 }
 
-.vich-image label:hover {
-    background: #0a53be;
-    color: white;
-    border: solid transparent;
-    cursor: pointer;
-}
-
 .banner {
     width: 100%;
     display: flex;
@@ -125,6 +125,7 @@ form {
 .vich-image {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
 }
 
 .vich-image input {
@@ -134,20 +135,40 @@ form {
 .vich-image div input {
     display: block;
 }
+.img-widget {
+    min-height: 100px;
+}
+.vich-image a{
+    border-radius: 5px;
+}
 
 .pp .vich-image a{
-    height: 5rem;
     display: block;
-    width: 5rem;
+    max-width: 11rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 
 .banner .vich-image a{
-    height: 5rem;
-    width: 15rem;
+    max-width: 32rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
-
+.pp .vich-image img {
+    aspect-ratio: 1;
+}
+.banner .vich-image img {
+    aspect-ratio: 16/9;
+}
 .vich-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Not image Field */
@@ -197,33 +218,5 @@ form {
     color: white;
     border: solid transparent;
     cursor: pointer;
-}
-
-@media screen and (max-width: 800px) {
-    .settings-container {
-        padding: 20px 200px;
-    }
-}
-
-@media screen and (max-width: 678px) {
-    .settings-container {
-        padding: 20px 100px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .settings-container {
-        padding: 20px 50px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .settings-container {
-        padding: 20px 20px;
-    }
-
-    form {
-        min-width: 20rem;
-    }
 }
 
