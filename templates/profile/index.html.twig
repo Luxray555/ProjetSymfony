@@ -56,7 +56,7 @@
 
         <div>
             <h2>Commentaires</h2>
-                <div class="comm_container">
+                <div class="comm_container bottom">
                 {% for com in user.getCommentaires() %}
                     <div class="comm_display">
                         <a href="{{ path('app_anime_show', {'id': com.anime.id}) }}">
@@ -73,4 +73,25 @@
                 </div>
         </div>
     </div>
+    <script>
+        let containerComm = document.querySelector('.comm_container');
+        containerComm.addEventListener('scroll', function() {
+            console.log(containerComm.scrollTop);
+            console.log(containerComm.scrollHeight);
+            console.log(containerComm.clientHeight);
+            console.log(containerComm.scrollHeight - containerComm.clientHeight);
+            console.log('------------------------------');
+            if (containerComm.scrollTop > 0) {
+                containerComm.classList.add('top');
+            }else if(containerComm.scrollTop == 0){
+                containerComm.classList.remove('top');
+            }
+            if (containerComm.scrollTop < containerComm.scrollHeight - containerComm.clientHeight) {
+                containerComm.classList.add('bottom');
+            }else if(containerComm.scrollTop == containerComm.scrollHeight - containerComm.clientHeight) {
+                console.log('ok');
+                containerComm.classList.remove('bottom');
+            }
+        });
+    </script>
 {% endblock %}
