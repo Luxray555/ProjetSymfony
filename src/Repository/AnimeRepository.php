@@ -41,7 +41,9 @@ class AnimeRepository extends ServiceEntityRepository
     public function findTrendingAnime(): array
     {
         return $this->createQueryBuilder('a')
-            ->orderBy('a.id', 'ASC')
+            ->leftJoin('a.notes', 'n')
+            ->groupBy('a')
+            ->orderBy('AVG(n.note) + COUNT(n.note)*0.2', 'DESC')
             ->setMaxResults(4)
             ->getQuery()
             ->getResult()
