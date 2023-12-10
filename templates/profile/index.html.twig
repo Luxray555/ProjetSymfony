@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="{{ asset('styles/stars.css') }}">
 {% endblock %}
 
+{% block javascripts %}
+    <script>
+        let containerComm = document.querySelector('.comm_container');
+        containerComm.addEventListener('scroll', function() {
+            console.log(containerComm.scrollTop);
+            console.log(containerComm.scrollHeight);
+            console.log(containerComm.clientHeight);
+            console.log(containerComm.scrollHeight - containerComm.clientHeight);
+            console.log('------------------------------');
+            if (containerComm.scrollTop > 0) {
+                containerComm.classList.add('top');
+            }else if(containerComm.scrollTop == 0){
+                containerComm.classList.remove('top');
+            }
+            if (containerComm.scrollTop < containerComm.scrollHeight - containerComm.clientHeight) {
+                containerComm.classList.add('bottom');
+            }else if(containerComm.scrollTop == containerComm.scrollHeight - containerComm.clientHeight) {
+                console.log('ok');
+                containerComm.classList.remove('bottom');
+            }
+        });
+    </script>
+{% endblock %}
+
 {% block body %}
 
 
@@ -73,25 +97,4 @@
                 </div>
         </div>
     </div>
-    <script>
-        let containerComm = document.querySelector('.comm_container');
-        containerComm.addEventListener('scroll', function() {
-            console.log(containerComm.scrollTop);
-            console.log(containerComm.scrollHeight);
-            console.log(containerComm.clientHeight);
-            console.log(containerComm.scrollHeight - containerComm.clientHeight);
-            console.log('------------------------------');
-            if (containerComm.scrollTop > 0) {
-                containerComm.classList.add('top');
-            }else if(containerComm.scrollTop == 0){
-                containerComm.classList.remove('top');
-            }
-            if (containerComm.scrollTop < containerComm.scrollHeight - containerComm.clientHeight) {
-                containerComm.classList.add('bottom');
-            }else if(containerComm.scrollTop == containerComm.scrollHeight - containerComm.clientHeight) {
-                console.log('ok');
-                containerComm.classList.remove('bottom');
-            }
-        });
-    </script>
 {% endblock %}
