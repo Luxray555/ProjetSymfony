@@ -5,18 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let maxCharacters = 500;
     let synopsis = document.querySelector('.synopsis');
 
-    textarea.addEventListener('input', function () {
-        var currentLength = textarea.value.length;
-        characterCount.textContent = currentLength;
+    if (textarea) {
+        textarea.addEventListener('input', function () {
+            var currentLength = textarea.value.length;
+            characterCount.textContent = currentLength;
 
-        if (currentLength >= maxCharacters) {
-            textarea.value = textarea.value.substring(0, maxCharacters); // Tronquer le texte à la limite
-            textarea.blur();
-            counter.classList.add('exceeded-limit');
-        } else {
-            counter.classList.remove('exceeded-limit');
-        }
-    });
+            if (currentLength >= maxCharacters) {
+                textarea.value = textarea.value.substring(0, maxCharacters); // Tronquer le texte à la limite
+                textarea.blur();
+                counter.classList.add('exceeded-limit');
+            } else {
+                counter.classList.remove('exceeded-limit');
+            }
+        });
+    }
 
     if (synopsis.clientHeight >= synopsis.querySelector('p').clientHeight) {
         synopsis.querySelector('button').classList.add('disabled');
