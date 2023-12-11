@@ -54,6 +54,9 @@
     object-position: center;
     transition: all .2s;
 }
+.carte-row:hover .img{
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
 .carte-row img{
     overflow: hidden;
     width: 100%;
